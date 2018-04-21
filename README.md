@@ -1,5 +1,6 @@
 # Study-09-MachineLearning
 
+----------------------------------------------------------------------------------------------------------------------------------------
 ### Warming-Up
 > 1. If our **df** has columns(x1, x2, y), we need to split the input and output into Numpy Arrays, in order to apply the classifiers in **scikit learn**...saying that..we convert a **Series** into a **NumpyArray**.
 ```
@@ -36,6 +37,7 @@ Let's play with some of these parameters of SVM and tune them in such a way that
 classifier = SVC(kernel = 'rbf', gamma = 200)
 classifier.fit(X,y)
 ```
+> 3. Regression and Classification
 
 
 
