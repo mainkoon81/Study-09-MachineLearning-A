@@ -6,7 +6,7 @@
 X = np.array(df[['x1','x2']])
 y = np.array(df['y'])
 ```
-> 2. **Train** models in **sklearn**: 'classifier.fit()'
+> 2. **Train** models in **sklearn**: `classifier.fit()`
 ```
 from sklearn.linear_model import LogisticRegression
 classifier = LogisticRegression()
