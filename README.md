@@ -24,6 +24,8 @@ from sklearn.neural_network import MLPClassifier
 classifier = MLPClassifier()
 classifier.fit(X,y)
 ```
+<img src="https://user-images.githubusercontent.com/31917400/39083168-0d70fcf8-4558-11e8-99e9-60fc68af05fb.jpg" />
+
 
 
 
