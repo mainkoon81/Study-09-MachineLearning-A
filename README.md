@@ -26,7 +26,7 @@ classifier.fit(X,y)
 ```
 <img src="https://user-images.githubusercontent.com/31917400/39083317-9f985d68-455a-11e8-9e54-426359e1c486.jpg" />
 
-Logistic Regression didn't do so well, as it's a linear algorithm. Decision Trees managed to bound the data well, but..what about this? 
+Logistic Regression didn't do so well, as it's a linear algorithm. Decision Trees and SVM managed to bound the data well, but..what about this? 
 Let's play with some of these parameters of SVM and tune them in such a way that they bound the desired area! The kernel that works best here is 'rbf', with large values of 'gamma'.
  - **kernel**(string): 'linear', 'poly', 'rbf'.
  - **degree**(integer): This is the degree of the polynomial kernel, if that's the kernel you picked (goes with poly kernel).
