@@ -1,5 +1,6 @@
 # Study-09-MachineLearning
 
+### Warming-Up
 > NumPy Arrays
 If 'df' has columns(x1, x2, y), we need to split the input and output into Numpy Arrays, in order to apply the classifiers in **scikit learn**...saying that..we convert a **Series** into a **NumpyArray**.
 ```
