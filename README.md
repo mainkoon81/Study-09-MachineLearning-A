@@ -24,11 +24,18 @@ from sklearn.neural_network import MLPClassifier
 classifier = MLPClassifier()
 classifier.fit(X,y)
 ```
-<img src="https://user-images.githubusercontent.com/31917400/39083217-df95a422-4558-11e8-97d0-03418b36ff53.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/39083317-9f985d68-455a-11e8-9e54-426359e1c486.jpg" />
 
 Logistic Regression didn't do so well, as it's a linear algorithm. Decision Trees managed to bound the data well, but..what about this? 
-
-
+Let's play with some of these parameters of SVM and tune them in such a way that they bound the desired area! The kernel that works best here is 'rbf', with large values of 'gamma'.
+ - **kernel**(string): 'linear', 'poly', 'rbf'.
+ - **degree**(integer): This is the degree of the polynomial kernel, if that's the kernel you picked (goes with poly kernel).
+ - **gamma**(float): The gamma parameter (goes with rbf kernel).
+ - **C**(float): The C parameter.
+```
+classifier = SVC(kernel = 'rbf', gamma = 200)
+classifier.fit(X,y)
+```
 
 
 
