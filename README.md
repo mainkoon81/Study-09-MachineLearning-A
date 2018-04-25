@@ -42,7 +42,19 @@ classifier.fit(X,y)
  - Classification: it determines or returns a **state**(+/-, Y/N, Cat/Dog/Bird...where the data-pt belongs to..)
 <img src="https://user-images.githubusercontent.com/31917400/39257585-cac6de22-48a9-11e8-8f45-1bad945142f6.jpg" />
 
+## Just...`train_test_split(X, y, test_size)`
+ - X_train: The training input
+ - X_test: The testing input
+ - y_train: The training labels
+ - y_test: The testing labels
+```
+X = np.array(data[['x1', 'x2']])
+y = np.array(data['y'])
+from sklearn.cross_validation import train_test_split
 
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
+```
+ 
  
  
 
