@@ -40,8 +40,9 @@ classifier.fit(X,y)
 > 3. Regression and Classification
  - Regression: it predicts or returns a **value**
  - Classification: it determines or returns a **state**(+/-, Y/N, Cat/Dog/Bird...where the data-pt belongs to..)
-<img src="https://user-images.githubusercontent.com/31917400/39257167-c23532dc-48a8-11e8-9ea9-cd7e71637903.jpg" />
- 
+<img src="https://user-images.githubusercontent.com/31917400/39257585-cac6de22-48a9-11e8-8f45-1bad945142f6.jpg" />
+
+
  
  
 
