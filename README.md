@@ -37,7 +37,7 @@ Let's play with some of these parameters of SVM and tune them in such a way that
 classifier = SVC(kernel = 'rbf', gamma = 200)
 classifier.fit(X,y)
 ```
-> 3. Regression and Classification
+> 3. Regression, Classification and Validation
  - Regression: it predicts or returns a **value**
  - Classification: it determines or returns a **state**(+/-, Y/N, Cat/Dog/Bird...where the data-pt belongs to..)
 <img src="https://user-images.githubusercontent.com/31917400/39257585-cac6de22-48a9-11e8-8f45-1bad945142f6.jpg" />
