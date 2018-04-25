@@ -37,7 +37,7 @@ Let's play with some of these parameters of SVM and tune them in such a way that
 classifier = SVC(kernel = 'rbf', gamma = 200)
 classifier.fit(X,y)
 ```
-> 3. Regression, Classification and Validation-Prep
+> 3. Validation-Prep (data splitting)
  - Regression: it predicts or returns a **value**
  - Classification: it determines or returns a **state**(+/-, Y/N, Cat/Dog/Bird...where the data-pt belongs to..)
 <img src="https://user-images.githubusercontent.com/31917400/39257585-cac6de22-48a9-11e8-8f45-1bad945142f6.jpg" />
@@ -55,9 +55,10 @@ from sklearn.cross_validation import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
 ```
 > 4. Validation with **Confusion-Matrix**
-### How well is my model doing ? 
- - 
- 
+#### How well is my model doing ? 
+<img src="https://user-images.githubusercontent.com/31917400/39277361-4c3516fa-48e5-11e8-8b77-5fa6ce7045a2.jpg" />
+
+
 
 
 
