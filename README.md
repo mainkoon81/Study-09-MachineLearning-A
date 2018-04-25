@@ -38,8 +38,8 @@ classifier = SVC(kernel = 'rbf', gamma = 200)
 classifier.fit(X,y)
 ```
 > 3. Regression and Classification
- - Regression: it predicts or returns a value
- - Classification: it determines or returns a state(+/-, Y/N, Cat/Dog/Bird...where the data-pt belongs to..)
+ - Regression: it predicts or returns a **value**
+ - Classification: it determines or returns a **state**(+/-, Y/N, Cat/Dog/Bird...where the data-pt belongs to..)
 <img src="https://user-images.githubusercontent.com/31917400/39257167-c23532dc-48a8-11e8-9ea9-cd7e71637903.jpg" />
  
  
