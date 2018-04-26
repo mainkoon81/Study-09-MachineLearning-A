@@ -84,9 +84,10 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
 <img src="https://user-images.githubusercontent.com/31917400/39332689-208dfa1a-49a0-11e8-9d33-d9d7f53a1626.jpg" />
 
  - Finding a good Beta requires a lot of intuition of our data. For example,
-   - Detecting malfunctioning parts in a spaceship ?--(FN Warning: a high recall model): B=2
-   - Sending phone notifications about videos a user may like ?--(not much costly: a decent precision and a decent recall): B=1
-   - Sending promotional material in the mail to potential clients ?--(costly, so FP Warning: a high precision model): B=0.5 
+   - Detecting malfunctioning parts in a spaceship ?--(FN Warning: a high recall model): Beta=2
+   - Sending phone notifications about videos a user may like ?--(not much costly: a decent precision and a decent recall): Beta=1
+   - Sending promotional material in the mail to potential clients ?--(costly, so FP Warning: a high precision model): Beta=0.5 
+### c) Roc-Curve
 
 
 ## Metric_02: Precision & Recall
