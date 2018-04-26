@@ -79,7 +79,8 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
 <img src="https://user-images.githubusercontent.com/31917400/39317672-15d0cf0c-4974-11e8-90e7-a950a87be5e2.jpg" />
 
 ### b) F-Beta-Score (Precision with 'FP' vs Recall with 'FN')
- - When our model care a bit more about the one than the other, we want sth more skewed towards the one..so select Beta ! 
+ - When our model care a bit more about the one than the other, we want sth more skewed towards the one.
+ - Select Beta ! 
 <img src="https://user-images.githubusercontent.com/31917400/39332689-208dfa1a-49a0-11e8-9d33-d9d7f53a1626.jpg" />
 
  - Finding a good Beta requires a lot of intuition of our data. For example,
