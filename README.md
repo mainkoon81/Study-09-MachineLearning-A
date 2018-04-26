@@ -57,7 +57,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
 -------------------------------------------------------------------------------------------------------------------------------------
 # 1) Validation of Classifier Model
  - with **Confusion-Matrix**
-### How well is my model doing ? 
+### How well is my Classifier doing ? 
 <img src="https://user-images.githubusercontent.com/31917400/39336893-b9a1263a-49b1-11e8-88c1-d59895c7dbe4.jpg" />
 
 ## Metric_01: Accuracy...`accuracy_score(y_true, y_pred)` 
@@ -101,7 +101,7 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
 
 # 2) Validation of Regression Model 
  - with **R-Squared**
-
+## How well is my Regression Model doing ?
 
 
 
