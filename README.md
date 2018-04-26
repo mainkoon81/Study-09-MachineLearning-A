@@ -54,7 +54,9 @@ from sklearn.cross_validation import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
 ```
-> 4. Validation of Classifier with **Confusion-Matrix**
+-------------------------------------------------------------------------------------------------------------------------------------
+# 1) Validation of Classifier Model
+ - with **Confusion-Matrix**
 ### How well is my model doing ? 
 <img src="https://user-images.githubusercontent.com/31917400/39336893-b9a1263a-49b1-11e8-88c1-d59895c7dbe4.jpg" />
 
@@ -97,7 +99,8 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
  - How to construct those values? Investigate every inch of the model based on "TPr&FPr"...For example, 
 <img src="https://user-images.githubusercontent.com/31917400/39336710-ec5aa66a-49b0-11e8-97c3-8a86ec1b1800.jpg" />
 
-> 5. Validation of Regression Model with **R-Squared**
+# 2) Validation of Regression Model 
+ - with **R-Squared**
 
 
 
