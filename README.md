@@ -92,9 +92,9 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
 ## Metric_03: Roc-Curve (Receiver Operating Characteristic)
  - In the chart of "TPr vs FPr", **the area** under the curve is our metric value. 
  - Consider the data which is now one dimensional, so all the red, blue pt lie in 1 line and we want to find the correct **split**.
-<img src="https://user-images.githubusercontent.com/31917400/39334203-9d835dc6-49a5-11e8-983d-bc43a81043c0.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/39336344-e9fd361e-49ae-11e8-9a3c-8164732a21c1.jpg" />
 
- - How to construct those values?
+ - How to construct those values? For example, 
 <img src="https://user-images.githubusercontent.com/31917400/39336183-0e435324-49ae-11e8-8993-38076294c030.jpg" />
 
 
