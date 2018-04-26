@@ -1,13 +1,13 @@
 # Study-09-MachineLearning-A
 
 ----------------------------------------------------------------------------------------------------------------------------------------
-### Warming-Up
-> 1. If our **df** has columns(x1, x2, y), we need to split the input and output into Numpy Arrays, in order to apply the classifiers in **scikit learn**...saying that..we convert a **Series** into a **NumpyArray**.
+## Warming-Up
+## > 1. If our **df** has columns(x1, x2, y), we need to split the input and output into Numpy Arrays, in order to apply the classifiers in **scikit learn**...saying that..we convert a **Series** into a **NumpyArray**.
 ```
 X = np.array(df[['x1','x2']])
 y = np.array(df['y'])
 ```
-> 2. **Train** models in **sklearn**: `classifier.fit()`
+## > 2. **Train** models in **sklearn**: `classifier.fit()`
 ```
 from sklearn.linear_model import LogisticRegression
 classifier = LogisticRegression()
@@ -37,7 +37,7 @@ Let's play with some of these parameters of SVM and tune them in such a way that
 classifier = SVC(kernel = 'rbf', gamma = 200)
 classifier.fit(X,y)
 ```
-> 3. Validation-Prep (data splitting)
+## > 3. Validation-Prep (data splitting)
  - Regression: it predicts or returns a **value**
  - Classification: it determines or returns a **state**(+/-, Y/N, Cat/Dog/Bird...where the data-pt belongs to..)
 <img src="https://user-images.githubusercontent.com/31917400/39257585-cac6de22-48a9-11e8-8f45-1bad945142f6.jpg" />
@@ -54,7 +54,7 @@ from sklearn.cross_validation import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
 ```
-> 4. Validation with **Confusion-Matrix**
+## > 4. Validation with **Confusion-Matrix**
 ### How well is my model doing ? 
 <img src="https://user-images.githubusercontent.com/31917400/39336893-b9a1263a-49b1-11e8-88c1-d59895c7dbe4.jpg" />
 
@@ -97,7 +97,7 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
  - How to construct those values? Investigate every inch of the model based on "TPr&FPr"...For example, 
 <img src="https://user-images.githubusercontent.com/31917400/39336710-ec5aa66a-49b0-11e8-97c3-8a86ec1b1800.jpg" />
 
-
+## > 5. 
 
 
 
