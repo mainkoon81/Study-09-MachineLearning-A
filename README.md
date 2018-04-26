@@ -97,7 +97,7 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
  - How to construct those values? Investigate every inch of the model based on "TPr&FPr"...For example, 
 <img src="https://user-images.githubusercontent.com/31917400/39336710-ec5aa66a-49b0-11e8-97c3-8a86ec1b1800.jpg" />
 
-> 5. Validation of Regression
+> 5. Validation of Regression Model with **R-Squared**
 
 
 
