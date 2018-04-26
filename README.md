@@ -68,6 +68,7 @@ accuracy_score(y_true, y_pred)
 ### But..when Accuracy won't work ?
 <img src="https://user-images.githubusercontent.com/31917400/39308440-594fbf20-495d-11e8-97f5-cd51d15696d7.jpg" />
 
+## Metric_02: Precision, Recall and F_Beta Score
 Plus, between these two errors, sometimes, depending on situation, the one is more critical over others (FP vs FN)
  - Precision (to capture **FP** and avoid): Out of all data-pt our model diagnosed with **Positive** world, how many did our model classify correctly ? 
  - Recall (to capture **FN** and avoid): Out of all data-pt that are actually **positive**, how many did our model classify correctly ? 
@@ -78,7 +79,7 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
  - F1-Score is closer to the **smallest** b/w Precison and Recall. If one of them is particularly low, the F1-Score kind of raises a flag ! 
 <img src="https://user-images.githubusercontent.com/31917400/39317672-15d0cf0c-4974-11e8-90e7-a950a87be5e2.jpg" />
 
-#### b) F-Beta-Score (Precision with 'FP' vs Recall with 'FN')
+#### b) F_Beta-Score (Precision with 'FP' vs Recall with 'FN')
  - When our model care a bit more about the one than the other, we want sth more skewed towards the one.
  - Select Beta !!! 
 <img src="https://user-images.githubusercontent.com/31917400/39332689-208dfa1a-49a0-11e8-9d33-d9d7f53a1626.jpg" />
@@ -88,9 +89,6 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
    - Sending phone notifications about videos a user may like ?--(not much costly: a decent precision and a decent recall): Beta=1
    - Sending promotional material in the mail to potential clients ?--(costly, so FP Warning: a high precision model): Beta=0.5 
 
-## Metric_02: Precision & Recall ???????
-
----------------------------------------------------------------------------------------------------------------------------------------
 ## Metric_03: Roc-Curve (Receiver Operating Characteristic)
  - In the chart of "TPr vs FPr", **the area** under the curve is our metric value. 
  - Consider the data which is now one dimensional, so all the red, blue pt lie in 1 line and we want to find the correct **split**.
