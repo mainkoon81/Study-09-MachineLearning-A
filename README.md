@@ -69,12 +69,11 @@ accuracy_score(y_true, y_pred)
 <img src="https://user-images.githubusercontent.com/31917400/39308440-594fbf20-495d-11e8-97f5-cd51d15696d7.jpg" />
 
 Plus, between these two errors, sometimes the one is more critical over others (FP vs FN)
-## Metric_02: Precision & Recall
  - Precision (to capture **FP** and avoid): Out of all data-pt our model diagnosed with **Positive** world, how many did our model classify correctly ? 
  - Recall (to capture **FN** and avoid): Out of all data-pt that are actually **positive**, how many did our model classify correctly ? 
 <img src="https://user-images.githubusercontent.com/31917400/39315393-7321c1a8-496e-11e8-8875-20948e25ceab.jpg" />
  
-
+## Metric_02: Precision & Recall
 
 
 
