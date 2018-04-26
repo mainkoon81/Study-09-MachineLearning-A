@@ -80,10 +80,12 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
 
 ### b) F-Beta-Score (Precision >? <? Recall)
  - When our model care a bit more about the one than the other, we want sth more skewed towards the one..so select Beta ! 
- - 
- 
-<img src="https://user-images.githubusercontent.com/31917400/39317672-15d0cf0c-4974-11e8-90e7-a950a87be5e2.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/39331773-5c97aed2-499d-11e8-81b9-bbffff2ba09d.jpg" />
 
+ - Finding a good Beta requires a lot of intuition of our data. For example,
+   - Detecting malfunctioning parts in a spaceship ?--(  )
+   - Sending phone notifications about videos a user may like ?--(  )
+   - Sending promotional material in the mail to potential clients ?--(  ) 
 
 
 ## Metric_02: Precision & Recall
