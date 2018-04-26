@@ -73,24 +73,31 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
  - Recall (to capture **FN** and avoid): Out of all data-pt that are actually **positive**, how many did our model classify correctly ? 
 <img src="https://user-images.githubusercontent.com/31917400/39315393-7321c1a8-496e-11e8-8875-20948e25ceab.jpg" />
 
-### a) F1-Score (Precision ~ Recall)
+#### a) F1-Score (Precision ~ Recall)
  - We can combine these two metrics into one metric, using **'Harmonic Mean'** which is called **'F1-Score'**(2xy/x+y)
  - F1-Score is closer to the **smallest** b/w Precison and Recall. If one of them is particularly low, the F1-Score kind of raises a flag ! 
 <img src="https://user-images.githubusercontent.com/31917400/39317672-15d0cf0c-4974-11e8-90e7-a950a87be5e2.jpg" />
 
-### b) F-Beta-Score (Precision with 'FP' vs Recall with 'FN')
+#### b) F-Beta-Score (Precision with 'FP' vs Recall with 'FN')
  - When our model care a bit more about the one than the other, we want sth more skewed towards the one.
- - Select Beta ! 
+ - Select Beta !!! 
 <img src="https://user-images.githubusercontent.com/31917400/39332689-208dfa1a-49a0-11e8-9d33-d9d7f53a1626.jpg" />
 
  - Finding a good Beta requires a lot of intuition of our data. For example,
    - Detecting malfunctioning parts in a spaceship ?--(FN Warning: a high recall model): Beta=2
    - Sending phone notifications about videos a user may like ?--(not much costly: a decent precision and a decent recall): Beta=1
    - Sending promotional material in the mail to potential clients ?--(costly, so FP Warning: a high precision model): Beta=0.5 
-### c) Roc-Curve
+
+## Metric_02: Precision & Recall ???????
+
+---------------------------------------------------------------------------------------------------------------------------------------
+## Metric_03: Roc-Curve (Receiver Operating Characteristic)
+ - Using TPr, FPr
+ - 
 
 
-## Metric_02: Precision & Recall
+
+
 
 
 
