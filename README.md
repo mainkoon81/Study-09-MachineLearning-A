@@ -1,4 +1,4 @@
-# Study-09-MachineLearning
+# Study-09-MachineLearning-A
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 ### Warming-Up
@@ -93,6 +93,9 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
  - In the chart of "TPr vs FPr", **the area** under the curve is our metric value. 
  - Consider the data which is now one dimensional, so all the red, blue pt lie in 1 line and we want to find the correct **split**.
 <img src="https://user-images.githubusercontent.com/31917400/39334203-9d835dc6-49a5-11e8-983d-bc43a81043c0.jpg" />
+
+ - How to construct those values?
+<img src="https://user-images.githubusercontent.com/31917400/39336183-0e435324-49ae-11e8-8993-38076294c030.jpg" />
 
 
 
