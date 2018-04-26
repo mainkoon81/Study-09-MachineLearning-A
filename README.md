@@ -73,13 +73,16 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
  - Recall (to capture **FN** and avoid): Out of all data-pt that are actually **positive**, how many did our model classify correctly ? 
 <img src="https://user-images.githubusercontent.com/31917400/39315393-7321c1a8-496e-11e8-8875-20948e25ceab.jpg" />
 
-### F1-Score
+### a) F1-Score (Precision ~ Recall)
  - We can combine these two metrics into one metric, using **'Harmonic Mean'** which is called **'F1-Score'**(2xy/x+y)
  - F1-Score is closer to the **smallest** b/w Precison and Recall. If one of them is particularly low, the F1-Score kind of raises a flag ! 
 <img src="https://user-images.githubusercontent.com/31917400/39317672-15d0cf0c-4974-11e8-90e7-a950a87be5e2.jpg" />
 
-### F-Beta-Score
-
+### b) F-Beta-Score (Precision >? <? Recall)
+ - When our model care a bit more about the one than the other, we want sth more skewed towards the one..so select Beta ! 
+ - 
+ 
+<img src="https://user-images.githubusercontent.com/31917400/39317672-15d0cf0c-4974-11e8-90e7-a950a87be5e2.jpg" />
 
 
 
