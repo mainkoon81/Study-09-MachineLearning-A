@@ -78,14 +78,14 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
  - F1-Score is closer to the **smallest** b/w Precison and Recall. If one of them is particularly low, the F1-Score kind of raises a flag ! 
 <img src="https://user-images.githubusercontent.com/31917400/39317672-15d0cf0c-4974-11e8-90e7-a950a87be5e2.jpg" />
 
-### b) F-Beta-Score (Precision >? <? Recall)
+### b) F-Beta-Score (Precision with 'FP' vs Recall with 'FN')
  - When our model care a bit more about the one than the other, we want sth more skewed towards the one..so select Beta ! 
-<img src="https://user-images.githubusercontent.com/31917400/39331773-5c97aed2-499d-11e8-81b9-bbffff2ba09d.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/39332689-208dfa1a-49a0-11e8-9d33-d9d7f53a1626.jpg" />
 
  - Finding a good Beta requires a lot of intuition of our data. For example,
-   - Detecting malfunctioning parts in a spaceship ?--(  )
-   - Sending phone notifications about videos a user may like ?--(  )
-   - Sending promotional material in the mail to potential clients ?--(  ) 
+   - Detecting malfunctioning parts in a spaceship ?--(FN Warning: a high recall model): B=2
+   - Sending phone notifications about videos a user may like ?--(not much costly: a decent precision and a decent recall): B=1
+   - Sending promotional material in the mail to potential clients ?--(costly, so FP Warning: a high precision model): B=0.5 
 
 
 ## Metric_02: Precision & Recall
