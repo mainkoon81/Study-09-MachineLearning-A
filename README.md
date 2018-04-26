@@ -42,7 +42,7 @@ classifier.fit(X,y)
  - Classification: it determines or returns a **state**(+/-, Y/N, Cat/Dog/Bird...where the data-pt belongs to..)
 <img src="https://user-images.githubusercontent.com/31917400/39257585-cac6de22-48a9-11e8-8f45-1bad945142f6.jpg" />
 
-## Just...`train_test_split(X, y, test_size)`
+## Split...`train_test_split(X, y, test_size)`
  - X_train: The training input
  - X_test: The testing input
  - y_train: The training labels
@@ -56,10 +56,14 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
 ```
 > 4. Validation with **Confusion-Matrix**
 #### How well is my model doing ? 
-<img src="https://user-images.githubusercontent.com/31917400/39277361-4c3516fa-48e5-11e8-8b77-5fa6ce7045a2.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/39306990-8985f668-4959-11e8-9062-cd560b51494e.jpg" />
 
+## Accuracy...`accuracy_score(y_true, y_pred)` 
+```
+from sklearn.metrics import accuracy_score
 
-
+accuracy_score(y_true, y_pred)
+```
 
 
 
