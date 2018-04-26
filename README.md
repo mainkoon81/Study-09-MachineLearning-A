@@ -56,7 +56,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
 ```
 > 4. Validation with **Confusion-Matrix**
 ### How well is my model doing ? 
-<img src="https://user-images.githubusercontent.com/31917400/39307945-1e1d187c-495c-11e8-8da5-d29e27b618b6.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/39336893-b9a1263a-49b1-11e8-88c1-d59895c7dbe4.jpg" />
 
 ## Metric_01: Accuracy...`accuracy_score(y_true, y_pred)` 
 ```
