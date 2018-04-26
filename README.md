@@ -55,15 +55,20 @@ from sklearn.cross_validation import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
 ```
 > 4. Validation with **Confusion-Matrix**
-#### How well is my model doing ? 
-<img src="https://user-images.githubusercontent.com/31917400/39306990-8985f668-4959-11e8-9062-cd560b51494e.jpg" />
+### How well is my model doing ? 
+<img src="https://user-images.githubusercontent.com/31917400/39307945-1e1d187c-495c-11e8-8da5-d29e27b618b6.jpg" />
 
-## Accuracy...`accuracy_score(y_true, y_pred)` 
+## Metric_01: Accuracy...`accuracy_score(y_true, y_pred)` 
 ```
 from sklearn.metrics import accuracy_score
 
 accuracy_score(y_true, y_pred)
 ```
+### When Accuracy won't work ?
+<img src="https://user-images.githubusercontent.com/31917400/39308440-594fbf20-495d-11e8-97f5-cd51d15696d7.jpg" />
+
+## Metric_02:
+
 
 
 
