@@ -95,7 +95,7 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
 <img src="https://user-images.githubusercontent.com/31917400/39336446-7db2501a-49af-11e8-8248-87bbb0757c1d.jpg" />
 
  - How to construct those values? For example, 
-<img src="https://user-images.githubusercontent.com/31917400/39336183-0e435324-49ae-11e8-8993-38076294c030.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/39336662-89c3e160-49b0-11e8-991b-d5700467b513.jpg" />
 
 
 
