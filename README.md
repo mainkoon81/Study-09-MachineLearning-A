@@ -95,7 +95,7 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
 <img src="https://user-images.githubusercontent.com/31917400/39336446-7db2501a-49af-11e8-8248-87bbb0757c1d.jpg" />
 
  - How to construct those values? Investigate every inch of the model...For example, 
-<img src="https://user-images.githubusercontent.com/31917400/39336662-89c3e160-49b0-11e8-991b-d5700467b513.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/39336710-ec5aa66a-49b0-11e8-97c3-8a86ec1b1800.jpg" />
 
 
 
