@@ -64,7 +64,7 @@ from sklearn.metrics import accuracy_score
 
 accuracy_score(y_true, y_pred)
 ```
-### When Accuracy won't work ?
+### But..when Accuracy won't work ?
 <img src="https://user-images.githubusercontent.com/31917400/39308440-594fbf20-495d-11e8-97f5-cd51d15696d7.jpg" />
 
 ## Metric_02:
