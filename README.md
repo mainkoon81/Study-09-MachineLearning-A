@@ -113,7 +113,8 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
    - We wish `"**MSE** of our model" < "**MSE** of the simplest model"`. Our model becomes 'numerator', the simplest model becomes 'denominator'.   
 <img src="https://user-images.githubusercontent.com/31917400/39385733-96e8ed22-4a69-11e8-89f5-e6162a16d303.jpg" />
 
-
+# 3) Model Selection
+ - 
    
 
 
