@@ -114,8 +114,13 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
 <img src="https://user-images.githubusercontent.com/31917400/39385733-96e8ed22-4a69-11e8-89f5-e6162a16d303.jpg" />
 
 # 3) Model Selection
- - 
-   
+ - Two Errors:
+   - Under-fitting (over-simplication): Error due to **bias**  
+   - Over-fitting (over-complication): Error due to **variance** 
+<img src="https://user-images.githubusercontent.com/31917400/39397583-8f5b7c6a-4af9-11e8-97a4-af5a6c673cb0.jpg" />
+
+ - How to detect them ? 
+
 
 
 
