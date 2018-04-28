@@ -140,7 +140,7 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
    - See where the errors converge to..which will tell under/over-fitting..
 <img src="https://user-images.githubusercontent.com/31917400/39400828-b385dde8-4b2f-11e8-92a5-18574c54be5b.jpg" />
 
-## 'learning_curve(estimator, X, y)`
+## `learning_curve(estimator, X, y)`
 ```
 train_sizes, train_scores, test_scores = learning_curve(
     estimator, X, y, cv=None, n_jobs=1, train_sizes=np.linspace(0.1, 1.0, num_trainings))
