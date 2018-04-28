@@ -121,7 +121,7 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
 
  - But we cannot use our test data to train our model like above(model selection). What should we do ? 
  - **Cross Validation**
-   - 
+<img src="https://user-images.githubusercontent.com/31917400/39399711-b425a720-4b1a-11e8-8cdf-1736fc1631c8.jpg" />
 
 
 
