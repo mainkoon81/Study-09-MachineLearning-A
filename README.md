@@ -117,9 +117,9 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
  - Two Errors:
    - Under-fitting (over-simplication): Error due to **bias**  
    - Over-fitting (over-complication): Error due to **variance** 
-<img src="https://user-images.githubusercontent.com/31917400/39399565-f33cd224-4b17-11e8-9f66-93791dcf0b41.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/39399635-489d9a4a-4b19-11e8-8b08-e8125166e173.jpg" />
 
- - How to detect them ? 
+ - But we cannot use our test data to train our model like above(model selection). What should we do ? 
  - **Cross Validation**
    - 
 
