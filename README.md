@@ -119,11 +119,19 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
    - Over-fitting (over-complication): Error due to **variance** 
 <img src="https://user-images.githubusercontent.com/31917400/39399635-489d9a4a-4b19-11e8-8b08-e8125166e173.jpg" />
 
- - But we cannot use our test data to train our model like above(model selection). What should we do ? 
- - **Cross Validation** to select model..
+ - But we cannot use our **test data** to train our model like above(model selection). What should we do ? 
+ - **Cross Validation** to select model.
+   - the best model-complexity would be the point where these two graphs just start to distance from each other. 
 <img src="https://user-images.githubusercontent.com/31917400/39399711-b425a720-4b1a-11e8-8cdf-1736fc1631c8.jpg" />
 
-
+ - **K-fold** Cross Validation
+   - Separating our data into a training set / a testing set
+   - 1) Breaking our data into **K-buckets** (K=4)
+   - 2) Training our model K times
+     - each time using a different bucket as our **testing set** and the remaining all data-pt as our training set. 
+   - 3) Average the results to get our final model. 
+   
+<img src="https://user-images.githubusercontent.com/31917400/39400592-443556ca-4b2b-11e8-9aae-85aa4861433c.jpg" />
 
 
 
