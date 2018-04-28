@@ -134,7 +134,14 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
    
 <img src="https://user-images.githubusercontent.com/31917400/39400592-443556ca-4b2b-11e8-9aae-85aa4861433c.jpg" />
 
+ - Learning Curve (NO.of training_pt VS Error_size)
+   - **Learning Curve** helps detect overfitting/underfitting
+   - Of course, when we train our model with small size of data, testing with CrossValidation will throw large size of error !
+   - See where the errors converge to..which will tell under/over-fitting..
+<img src="https://user-images.githubusercontent.com/31917400/39400828-b385dde8-4b2f-11e8-92a5-18574c54be5b.jpg" />
 
+
+ 
 
 
 
