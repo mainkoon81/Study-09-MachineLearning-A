@@ -151,6 +151,8 @@ train_sizes, train_scores, test_scores = learning_curve(
  - **train_sizes**: are the sizes of the chunks of data used to draw each point in the curve.
  - train_scores: are the training scores for the algorithm trained on each chunk of data.
  - test_scores: are the testing scores for the algorithm trained on each chunk of data.
+   - train_scores and test_scores will come in as a list of 'K'number of values, and this is because the function uses 'K' Fold CrossValidation.
+ - we defined our curves with 'Training and Testing Error', but this function defines them with 'Training and Testing Score'. These are opposite, so the higher the error, the lower the score. Thus, when you see the curve, you need to flip it upside down.
 
 ```
 from sklearn.linear_model import LogisticRegression
