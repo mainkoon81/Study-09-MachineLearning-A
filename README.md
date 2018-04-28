@@ -117,7 +117,7 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
  - Two Errors:
    - Under-fitting (over-simplication): Error due to **bias**  
    - Over-fitting (over-complication): Error due to **variance** 
-<img src="https://user-images.githubusercontent.com/31917400/39397707-b0ed0b8a-4afb-11e8-8c79-5a41c67b3192.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/39397738-3631468a-4afc-11e8-96e0-75e224b41e3b.jpg" />
 
  - How to detect them ? 
 
