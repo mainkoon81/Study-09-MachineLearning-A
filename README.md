@@ -57,7 +57,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
 -------------------------------------------------------------------------------------------------------------------------------------
 > 4. How well is my model doing ? (Validation with test results)
 
-# 1) Validation of Classifier Model
+# 1) Validation (Classifier Model)
  - with **Confusion-Matrix**
 <img src="https://user-images.githubusercontent.com/31917400/39336893-b9a1263a-49b1-11e8-88c1-d59895c7dbe4.jpg" />
 
@@ -100,7 +100,7 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
  - How to construct those values? Examine every inch of the model based on "TPr&FPr"...For example, 
 <img src="https://user-images.githubusercontent.com/31917400/39336710-ec5aa66a-49b0-11e8-97c3-8a86ec1b1800.jpg" />
 
-# 2) Validation of Regression Model 
+# 2) Validation (Regression Model) 
  - with **R-Squared**
 
 ## Metric_01: Mean Absoulte Error vs. Mean Squared Error vs. R-Squared
