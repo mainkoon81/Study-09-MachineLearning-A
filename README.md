@@ -154,6 +154,8 @@ train_sizes, train_scores, test_scores = learning_curve(
    - train_scores and test_scores will come in as a list of 'K'number of values, and this is because the function uses 'K' Fold CrossValidation.
  - we defined our curves with 'Training and Testing Error', but this function defines them with 'Training and Testing Score'. These are opposite, so the higher the error, the lower the score. Thus, when you see the curve, you need to flip it upside down.
 
+<img src="https://user-images.githubusercontent.com/31917400/39401453-6f46cd1e-4b3d-11e8-872c-9305d7f40f83.jpg" />
+
 ```
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import GradientBoostingClassifier
