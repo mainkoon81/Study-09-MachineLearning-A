@@ -120,7 +120,7 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
 <img src="https://user-images.githubusercontent.com/31917400/39399635-489d9a4a-4b19-11e8-8b08-e8125166e173.jpg" />
 
  - But we cannot use our test data to train our model like above(model selection). What should we do ? 
- - **Cross Validation**
+ - **Cross Validation** to select model..
 <img src="https://user-images.githubusercontent.com/31917400/39399711-b425a720-4b1a-11e8-8cdf-1736fc1631c8.jpg" />
 
 
