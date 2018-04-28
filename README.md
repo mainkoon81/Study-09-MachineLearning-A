@@ -148,9 +148,9 @@ train_sizes, train_scores, test_scores = learning_curve(
  - `estimator`: is the actual classifier we're using for the data
    - LogisticRegression(), GradientBoostingClassifier(), SVC(), etc
  - `X` and `y` is our data, split into **features** and **labels**.
- - train_sizes: 
- - train_scores: 
- - test_scores: 
+ - train_sizes: are the sizes of the chunks of data used to draw each point in the curve.
+ - train_scores: are the training scores for the algorithm trained on each chunk of data.
+ - test_scores: are the testing scores for the algorithm trained on each chunk of data.
 
 ```
 from sklearn.linear_model import LogisticRegression
