@@ -156,6 +156,10 @@ train_sizes, train_scores, test_scores = learning_curve(
 
 <img src="https://user-images.githubusercontent.com/31917400/39401453-6f46cd1e-4b3d-11e8-872c-9305d7f40f83.jpg" />
 
+ - The Logistic Regression model has a low training and testing score ==> higher error
+ - The Decision Tree model has a high training and testing score ==> lower error
+ - The Support Vector Machine model has a high training score, and a low testing score ==> lower train error & higher testing error
+
 ```
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import GradientBoostingClassifier
