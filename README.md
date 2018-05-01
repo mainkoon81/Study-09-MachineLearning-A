@@ -324,6 +324,13 @@ print('The Testing F1 Score is', f1_score(test_predictions, y_test))
 
 Woah! Some heavy overfitting there. Not just from looking at the graph, but also from looking at the difference between the high training score (1.0) and the low testing score (0.7).Let's see if we can find better hyperparameters for this model to do better. We'll use grid search for this.
 
+5. Use grid search to improve this model.
+ - First define some parameters to perform grid search on. We suggest to play with max_depth, min_samples_leaf, and min_samples_split.
+ - Make a scorer for the model using f1_score.
+ - Perform grid search on the classifier, using the parameters and the scorer.
+ - Fit the data to the new classifier.
+ - Plot the model and find the f1_score.
+ - If the model is not much better, try changing the ranges for the parameters and fit it again.
 
 
 
