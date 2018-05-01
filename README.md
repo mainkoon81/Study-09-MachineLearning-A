@@ -204,7 +204,7 @@ def draw_learning_curves(X, y, estimator, num_trainings):
     plt.show()
 ```
 
-> In SVM, tuning the parameters can be a lot of work, and GridCV, a sklearn tool can offer an optimal parameter tune almost automatically.
+> By the way, in SVM, tuning the parameters can be a lot of work, and GridCV, a sklearn tool can offer an optimal parameter tune almost automatically.
 
 
 
