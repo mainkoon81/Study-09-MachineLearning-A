@@ -220,7 +220,7 @@ Therefore,
 
 > By the way, in SVM, tuning the parameters can be a lot of work, and GridSearchCV, a sklearn tool can offer an optimal parameter tune almost automatically. The optimization:
 
-**1) Select Parameters**
+**a) Select Parameters**
 Let's say we'd like to decide between the following parameters:
  - kernel: `poly` or `rbf`.
  - C: `0.1`, `1`, or `10`.
@@ -230,7 +230,7 @@ We pick what are the parameters we want to choose from, and form a `dictionary`.
 parameters = {'kernel':['poly', 'rbf'],'C':[0.1, 1, 10]}
 ```
 
-**2) Decide Metric**
+**b) Decide Metric**
 What metric we'll use to score each of the candidate models ? F1 ? 
 ```
 from sklearn.metrics import make_scorer
@@ -239,7 +239,7 @@ from sklearn.metrics import f1_score
 scorer = make_scorer(f1_score)
 ```
 
-**3) Creast GridSearch Object**
+**c) Creast GridSearch Object**
 Use GridSearch object to fit the data.
 ```
 from sklearn.model_selection import GridSearchCV
@@ -248,10 +248,24 @@ grid_obj = GridSearchCV(clf, parameters, scoring=scorer)
 grid_fit = grid_obj.fit(X, y)
 ```
 
-**4) Get the best model**
+**d) Get the best model**
 ```
 best_clf = grid_fit.best_estimator_
 ```
+# 4) final example
+Improving a model with Grid Search
+ - This initial model will overfit heavily. We use Grid Search to find better parameters for this model, to reduce the overfitting.
+
+1. Reading and plotting the data
+```
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+```
+<img src="https://user-images.githubusercontent.com/31917400/39492986-32e28bb2-4d89-11e8-9541-9a59000f7214.jpg" />
+
+
+
 
 
 
