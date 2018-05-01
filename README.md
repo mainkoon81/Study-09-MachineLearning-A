@@ -264,6 +264,67 @@ import matplotlib.pyplot as plt
 ```
 <img src="https://user-images.githubusercontent.com/31917400/39492986-32e28bb2-4d89-11e8-9541-9a59000f7214.jpg" />
 
+2. Splitting our data into training and testing sets
+```
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import f1_score, make_scorer
+
+import random
+random.seed(42)
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+```
+3. Fitting a DecisionTree model. Define the model with default hyperparameters(random_state=42)
+```
+from sklearn.tree import DecisionTreeClassifier
+clf = DecisionTreeClassifier(random_state=42)
+
+clf.fit(X_train, y_train)
+
+train_predictions = clf.predict(X_train)
+test_predictions = clf.predict(X_test)
+```
+4. plot the model, and find the testing f1_score
+```
+def plot_model(X, y, clf):
+    plt.scatter(X[np.argwhere(y==0).flatten(),0],X[np.argwhere(y==0).flatten(),1],s = 50, color = 'blue', edgecolor = 'k')
+    plt.scatter(X[np.argwhere(y==1).flatten(),0],X[np.argwhere(y==1).flatten(),1],s = 50, color = 'red', edgecolor = 'k')
+
+    plt.xlim(-2.05,2.05)
+    plt.ylim(-2.05,2.05)
+    plt.grid(False)
+    plt.tick_params(
+        axis='x',
+        which='both',
+        bottom='off',
+        top='off')
+
+    r = np.linspace(-2.1,2.1,300)
+    s,t = np.meshgrid(r,r)
+    s = np.reshape(s,(np.size(s),1))
+    t = np.reshape(t,(np.size(t),1))
+    h = np.concatenate((s,t),1)
+
+    z = clf.predict(h)
+
+    s = s.reshape((np.size(r),np.size(r)))
+    t = t.reshape((np.size(r),np.size(r)))
+    z = z.reshape((np.size(r),np.size(r)))
+
+    plt.contourf(s,t,z,colors = ['blue','red'],alpha = 0.2,levels = range(-1,2))
+    if len(np.unique(z)) > 1:
+        plt.contour(s,t,z,colors = 'k', linewidths = 2)
+    plt.show()
+
+plot_model(X, y, clf)
+print('The Training F1 Score is', f1_score(train_predictions, y_train))
+print('The Testing F1 Score is', f1_score(test_predictions, y_test))
+```
+<img src="https://user-images.githubusercontent.com/31917400/39493683-ab52e770-4d8b-11e8-8984-9463eba7e1f5.jpg" />
+
+Woah! Some heavy overfitting there. Not just from looking at the graph, but also from looking at the difference between the high training score (1.0) and the low testing score (0.7).Let's see if we can find better hyperparameters for this model to do better. We'll use grid search for this.
+
+
 
 
 
