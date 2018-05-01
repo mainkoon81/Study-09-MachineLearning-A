@@ -30,9 +30,9 @@ classifier.fit(X,y)
 Logistic Regression didn't do so well, as it's a linear algorithm. Decision Trees and SVM managed to bound the data well, but..what about this? 
 Let's play with some of these parameters of SVM and tune them in such a way that they bound the desired area! The kernel that works best here is 'rbf', with large values of 'gamma'.
  - **kernel**(string): 'linear', 'poly', 'rbf'.
- - **degree**(integer): for 'polynomial' kernel only.
- - **gamma**(float): for 'rbf' kernel only.
- - **C**(float): The C parameter.
+   - **C**(float): for 'linear' only.
+   - **degree**(integer): for 'polynomial' kernel only.
+   - **gamma**(float): for 'rbf' kernel only.
 ```
 classifier = SVC(kernel = 'rbf', gamma = 200)
 classifier.fit(X,y)
