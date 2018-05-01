@@ -215,11 +215,43 @@ Therefore,
  - in SVM,
    - we pick the model with the highest F1-Score. 
    - parameters: Kernels(linear/poly/rbf/sigmoid)
-   - Hyper(meta)-parameter**s**: C_value, degree, gamma) 
+   - Hyper(meta)-parameter**s**: C_value, degree, gamma, etc) 
 <img src="https://user-images.githubusercontent.com/31917400/39488793-431e5956-4d7b-11e8-94a8-80a5c05852b5.jpg" />
 
-> By the way, in SVM, tuning the parameters can be a lot of work, and GridCV, a sklearn tool can offer an optimal parameter tune almost automatically.
+> By the way, in SVM, tuning the parameters can be a lot of work, and GridSearchCV, a sklearn tool can offer an optimal parameter tune almost automatically. The optimization:
 
+**1) Select Parameters**
+Let's say we'd like to decide between the following parameters:
+ - kernel: `poly` or `rbf`.
+ - C: `0.1`, `1`, or `10`.
+
+We pick what are the parameters we want to choose from, and form a `dictionary`. In this dictionary, the keys will be the names of the parameters, and the values will be the lists of possible values for each parameter.
+```
+parameters = {'kernel':['poly', 'rbf'],'C':[0.1, 1, 10]}
+```
+
+**2) Decide Metric**
+What metric we'll use to score each of the candidate models ? F1 ? 
+```
+from sklearn.metrics import make_scorer
+from sklearn.metrics import f1_score
+
+scorer = make_scorer(f1_score)
+```
+
+**3) Creast GridSearch Object**
+Use GridSearch object to fit the data.
+```
+from sklearn.model_selection import GridSearchCV
+
+grid_obj = GridSearchCV(clf, parameters, scoring=scorer)
+grid_fit = grid_obj.fit(X, y)
+```
+
+**4) Get the best model**
+```
+best_clf = grid_fit.best_estimator_
+```
 
 
 
