@@ -203,6 +203,20 @@ def draw_learning_curves(X, y, estimator, num_trainings):
 
     plt.show()
 ```
+Therefore, 
+ - in Logistic Regression, 
+   - we pick the model with the highest F1-Score. 
+   - parameters: coefficients of the polynomial 
+   - Hyper(meta)-parameter: the degree of the polynomial 
+ - in Decision Tree, 
+   - we pick the model with the highest F1-Score.
+   - parameters: thresholds in the leaves & nodes
+   - Hyper(meta)-parameter: the depth of the trees
+ - in SVM,
+   - we pick the model with the highest F1-Score. 
+   - parameters: Kernels(linear/poly/rbf/sigmoid)
+   - Hyper(meta)-parameter**s**: C_value, degree, gamma) 
+<img src="https://user-images.githubusercontent.com/31917400/39488793-431e5956-4d7b-11e8-94a8-80a5c05852b5.jpg" />
 
 > By the way, in SVM, tuning the parameters can be a lot of work, and GridCV, a sklearn tool can offer an optimal parameter tune almost automatically.
 
