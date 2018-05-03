@@ -125,11 +125,11 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
 <img src="https://user-images.githubusercontent.com/31917400/39399711-b425a720-4b1a-11e8-8cdf-1736fc1631c8.jpg" />
 
  - For example, **K-fold** Cross Validation
-   - Separating our data into a training set / a real-testing set
-   - In the training set, 
+   - First, dividing our data into a training set / a real-testing set
+   - Only in the training set, 
      - 1. Breaking our data into **K-buckets** (K=4)
-     - 2. Training our model K times
-       - each time using a different bucket as our **testing set** and the remaining all data-pt as our training set. 
+     - 2. Training our model K times 
+       - each time using a different bucket as our **testing set** and the remaining all data-pt(K-1) as our **training set**. 
      - 3. Average the results to get our final model. 
    
 <img src="https://user-images.githubusercontent.com/31917400/39400592-443556ca-4b2b-11e8-9aae-85aa4861433c.jpg" />
