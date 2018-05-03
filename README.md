@@ -333,6 +333,12 @@ Woah! Some heavy overfitting there. Not just from looking at the graph, but also
  - If the model is not much better, try changing the ranges for the parameters and fit it again.
 <img src="https://user-images.githubusercontent.com/31917400/39605982-f4d2a016-4f2a-11e8-9b71-0cd5e5a13a3f.jpg" />
 
+`DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=4,
+            max_features=None, max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=2, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, presort=False, random_state=42,
+            splitter='best')`
 
 
 
