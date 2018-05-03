@@ -339,7 +339,7 @@ Woah! Some heavy overfitting there. Not just from looking at the graph, but also
             min_samples_leaf=2, min_samples_split=2,
             min_weight_fraction_leaf=0.0, presort=False, random_state=42,
             splitter='best')`
-
+GridSearch improved the `F1 Score` from 0.7 to 0.8 (and we lost some training score, but this is ok). Also, if you look at the plot, the second model has a much simpler boundary, which implies that it's less likely to overfit.
 
 
 
