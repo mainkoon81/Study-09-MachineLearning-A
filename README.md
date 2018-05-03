@@ -331,6 +331,7 @@ Woah! Some heavy overfitting there. Not just from looking at the graph, but also
  - Fit the data to the new classifier.
  - Plot the model and find the f1_score.
  - If the model is not much better, try changing the ranges for the parameters and fit it again.
+<img src="https://user-images.githubusercontent.com/31917400/39605982-f4d2a016-4f2a-11e8-9b71-0cd5e5a13a3f.jpg" />
 
 
 
