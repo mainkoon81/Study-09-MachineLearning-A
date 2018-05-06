@@ -106,7 +106,8 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
 ## Metric_01: MSE & R-Squared
 ```
 from sklearn.metrics import r2_score
-score = r2_score(y_true, y_pred)
+
+r2_score(y_true, y_pred)
 ```
  - Mean **Absolute** Error: The absolute value function is not differentiable. This is not good if we want to use the **gradient descent** methods. 
  - Mean **Squared** Error: To solve this, we use Mean Squared Error.
