@@ -110,7 +110,7 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
  
  - R-Squared: It is based on comparing **our model** to the **simplest model**. 
    - The simplest model: taking avg of all the values (the horizontal line).
-   - We wish `"**SSE** of our model" < "**SSE** of the simplest model(SSTo)"`. Our model becomes 'numerator', the simplest model becomes 'denominator'. 
+   - We wish `"**SSE** of our model" < "**SSE** of the simplest model(SSTo)"`. Our model(Full Model) becomes 'numerator', the simplest model(Reduced Model) becomes 'denominator'. 
      - SSE: talking about the error of the model
      - SSR: talking about the improvement of the model
      - SSTo: talking about the AVG of the data, so constant. It doesn't rely on the model. 
