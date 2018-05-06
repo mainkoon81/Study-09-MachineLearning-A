@@ -55,7 +55,7 @@ from sklearn.cross_validation import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
 ```
 -------------------------------------------------------------------------------------------------------------------------------------
-> 4. How well is my model doing ? (Validation with test results)
+> 4. Performance: How well is my model doing ? (Validation with test results)
 
 # 1) Validation I. (Classifier Model)
  - with `**Confusion-Matrix**`
