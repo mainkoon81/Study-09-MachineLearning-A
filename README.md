@@ -114,7 +114,9 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
    - The error of our model(Full Model) becomes 'numerator', the error of the simplest model(Reduced Model) becomes 'denominator'. 
      - SSE: talking about the error of the model
      - SSR: talking about the improvement of the model
-     - SSTo: talking about the AVG of the data, so constant. It doesn't rely on the model. 
+     - SSTo: talking about the AVG of the data, so constant. It doesn't rely on the model.
+     - DF for (SSE or residual): the sample size - the number of parameters being estimated - intercept
+     - DF for SSR: just the number of predictor variables
 <img src="https://user-images.githubusercontent.com/31917400/39673001-6c8cf68a-512c-11e8-8bca-cd1f0f3860af.jpg" />
 
 # 3) Model Selection
