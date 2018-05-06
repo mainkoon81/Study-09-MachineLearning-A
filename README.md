@@ -103,7 +103,7 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
 # 2) Validation II. (Regression Model) 
  - with `**R-Squared**`
 
-## Metric_01: Mean Absoulte Error vs. Mean Squared Error vs. R-Squared
+## Metric_01: MSE & R-Squared
  - Mean **Absolute** Error: The absolute value function is not differentiable. This is not good if we want to use the **gradient descent** methods. 
  - Mean **Squared** Error: To solve this, we use Mean Squared Error.
 <img src="https://user-images.githubusercontent.com/31917400/39385600-092c2fa8-4a69-11e8-9df6-46255b58fa3c.jpg" />
