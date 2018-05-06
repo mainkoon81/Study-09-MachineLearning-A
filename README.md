@@ -135,7 +135,7 @@ r2_score(y_true, y_pred)
    - the best model-complexity would be the point where these two graphs just start to distance from each other. 
 <img src="https://user-images.githubusercontent.com/31917400/39399711-b425a720-4b1a-11e8-8cdf-1736fc1631c8.jpg" />
 
- - For example, **K-fold** Cross Validation
+ - EX) **K-fold** Cross Validation
    - First, dividing our data into a training set / a real-testing set
    - Only in the training set, 
      - 1. Breaking our data into **K-buckets** (K=4)
@@ -145,9 +145,9 @@ r2_score(y_true, y_pred)
    
 <img src="https://user-images.githubusercontent.com/31917400/39400592-443556ca-4b2b-11e8-9aae-85aa4861433c.jpg" />
 
- - Learning Curve (NO.of training_pt VS Error_size)
-   - **Learning Curve** helps detect overfitting/underfitting
-   - Of course, when we train our model with small size of data, testing with CrossValidation will throw large size of error !
+ - EX) **Learning Curve** (NO.of training_pt VS Error_size)
+   - It helps detect overfitting/underfitting
+     - Of course, when we train our model with small size of data, testing with CrossValidation will throw large size of error !
    - See where the errors converge to..which will tell under/over-fitting..
 <img src="https://user-images.githubusercontent.com/31917400/39400828-b385dde8-4b2f-11e8-92a5-18574c54be5b.jpg" />
 
