@@ -114,7 +114,7 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
      - SSE: talking about the error of the model
      - SSR: talking about the improvement of the model
      - SSTo: talking about the AVG of the data, so constant. It doesn't rely on the model. 
-<img src="https://user-images.githubusercontent.com/31917400/39672849-02458140-512a-11e8-9d86-18cb19e3e9de.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/39673001-6c8cf68a-512c-11e8-8bca-cd1f0f3860af.jpg" />
 
 # 3) Model Selection
  - Two Errors:
