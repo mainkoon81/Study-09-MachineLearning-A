@@ -112,11 +112,11 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
    - The simplest model: taking avg of all the values (the horizontal line).
    - We wish `"**SSE** of our model" < "**SSE** of the simplest model(SSTo)"`. 
    - The error of our model(Full Model) becomes 'numerator', the error of the simplest model(Reduced Model) becomes 'denominator'. 
-     - SSE: talking about the error of the model
-     - SSR: talking about the improvement of the model
-     - SSTo: talking about the AVG of the data, so constant. It doesn't rely on the model.
+     - SSE: talking about the error of the model(Full Model)
+     - SSR: talking about the improvement of the model(Reduced - Full)
+     - SSTo: talking about the AVG of the data, so constant. It doesn't rely on the model(Reduced Model)
      - DF for (SSE or residual): the sample size - the number of parameters being estimated - intercept
-     - DF for SSR: just the number of predictor variables
+     - DF for SSR: just the number of predictor variables(Reduced - Full)
 <img src="https://user-images.githubusercontent.com/31917400/39673142-9d22219c-512e-11e8-8a6b-a10c0009b375.jpg" />
 
 # 3) Model Selection
