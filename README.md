@@ -27,26 +27,29 @@ classifier.fit(X,y)
 ```
 <img src="https://user-images.githubusercontent.com/31917400/39083317-9f985d68-455a-11e8-9e54-426359e1c486.jpg" />
 
-Logistic Regression didn't do so well, as it's a linear algorithm. Decision Trees and SVM managed to bound the data well, but..what about this ?
-
-[Note] Let's play with some of these parameters of SVM and tune them in such a way that they bound the desired area! The kernel that works best here is 'rbf', with large values of 'gamma'.
- - **kernel**(string): 'linear', 'poly', 'rbf'.
+Logistic Regression didn't do so well, as it's a linear algorithm. Decision Trees and SVM managed to bound the data well, but..what about this crazy dataset on the right ? Only SVM stands alone ? Let's play with some of these parameters of SVM and tune them in such a way that they bound the desired area! The kernel that works best here is 'rbf', with large values of 'gamma'.
+ - **kernel**(string): 'linear', 'poly', 'rbf'
    - **C**(float): for 'linear'. wiggle, wiggle
-   - **degree**(integer): for 'polynomial' kernel only.
-   - **gamma**(float): for 'rbf' kernel only. Right in ur face.
+   - **degree**(integer): for 'polynomial' kernel only
+   - **gamma**(float): for 'rbf' kernel only. Right in ur face !
 ```
 classifier = SVC(kernel = 'rbf', gamma = 200)
 classifier.fit(X,y)
 ```
 Next step would be using our model: `classifier.fit(X,y)` then `classifier.predict(new_X, new_y)`
-# But how are you sure if our model is correct or not ? 
-Thus, we say:
- - Step_01:**training** our model: training(training + testing), using 'cross-validation'
- - Step_02:**selecting the best model**: selecting, using 'learning-curve'
- - Step_03:**testing** our model: testing
 
-## > Step_01
-### a) Here, the problem is your `X` and `y`. Before training our model, note "how to separate our `X` and `y` into training set & testing set"!
+---------------------------------------------------------------------------------------------------------------------------------------
+# But how are you sure if our model is worth or not ? 
+Thus, we say:
+ - Step_00:**split**on data - training set & testing set. 
+ - Step_01:**train** our model within Cross-Validation frame - train-test,train-test,train-test,train-test,train-test....AVG! 
+   - Note: Split the training set again(into training and testing), but keeping track of the size of testing sets to find the best **model complexity**! 
+   - Note: In each train-test, use our traditional validation metrics. 
+ - Step_02:**select the best model**: selecting, using 'learning-curve'.
+ - Step_03:**test** our model: final testing, using our traditional validation metrics. 
+---------------------------------------------------------------------------------------------------------------------------------------
+## > Step_00
+### Here, the problem is your `X` and `y`. Before training our model, note "how to separate our `X` and `y` into training set & testing set"!
 ## `train_test_split(X, y, test_size, random_state)`
  - X_train: The training input
  - X_test: The testing input
@@ -59,7 +62,8 @@ from sklearn.cross_validation import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
 ```
-### b) Another problem is we should save our 'testing set' for later. Play along with 'training set' solely, using `Cross Validation`.
+## > Step_01
+### Another problem is we should save our 'testing set' for later, so Play along with 'training set' solely, using `Cross Validation`.
 The best model-complexity would be the point where these two graphs just start to distance from each other. 
 <img src="https://user-images.githubusercontent.com/31917400/39399711-b425a720-4b1a-11e8-8cdf-1736fc1631c8.jpg" />
 
@@ -74,7 +78,7 @@ The best model-complexity would be the point where these two graphs just start t
 <img src="https://user-images.githubusercontent.com/31917400/39400592-443556ca-4b2b-11e8-9aae-85aa4861433c.jpg" />
 
 ## > Step_02 
-### a) We select the best model. Now time to care underfitting/overfitting
+### Now, it's time to care underfitting/overfitting to select the best model.
  - Two Errors:
    - Under-fitting (over-simplication): Error due to **bias**  
    - Over-fitting (over-complication): Error due to **variance** 
