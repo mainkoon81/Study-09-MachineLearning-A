@@ -209,6 +209,7 @@ grid_fit = grid_obj.fit(X, y)
 ```
 best_clf = grid_fit.best_estimator_
 ```
+# NEXT...
 ---------------------------------------------------------------------------------------------------------------------------------------
 # Validation I. (Classifier Model)
  - with `**Confusion-Matrix**`
@@ -220,7 +221,6 @@ from sklearn.metrics import accuracy_score
 
 accuracy_score(y_true, y_pred)
 ```
----------------------------------------------------------------------------------------------------------------------------------------
 ### But..when Accuracy won't work ?
 <img src="https://user-images.githubusercontent.com/31917400/39308440-594fbf20-495d-11e8-97f5-cd51d15696d7.jpg" />
 
@@ -277,43 +277,8 @@ r2_score(y_true, y_pred)
      - DF for SSR: just the number of predictor variables(Reduced - Full)
 <img src="https://user-images.githubusercontent.com/31917400/39673142-9d22219c-512e-11e8-8a6b-a10c0009b375.jpg" />
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# 4) final example
+--------------------------------------------------------------------------------------------------------------------------------------
+# Case Study
 Improving a model with Grid Search
  - This initial model will overfit heavily. We use Grid Search to find better parameters for this model, to reduce the overfitting.
 
