@@ -41,12 +41,12 @@ Next step would be using our model: `classifier.fit(X,y)` then `classifier.predi
 ---------------------------------------------------------------------------------------------------------------------------------------
 # But how are you sure if our model is worth or not ? 
 Thus, we say:
- - Step_00: **split** on data - training set & testing set. 
+ - Step_00: **split** on data - training set & `real testing set`. 
  - Step_01: **train** our model within Cross-Validation frame - 'train-test','train-test','train-test','train-test','train-test'...AVG! 
    - Note: Split the training set again(into training and testing), but keeping track of the size of testing sets to find the best **model complexity**! 
    - Note: In each 'train-test', use our traditional validation metrics or 'learning curve'. 
  - Step_02: **select** the best model.
- - Step_03: **test** the best model: final testing, using our traditional validation metrics again.
+ - Step_03: **test** the best model with our `real testing set`: Fit and validate, using our traditional validation metrics again.
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## > Step_00
 ### Here, the problem is your `X` and `y`. Before training our model, note "how to separate our `X` and `y` into training set & testing set"!
