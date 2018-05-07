@@ -2,12 +2,12 @@
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 ## Warming-Up
-> 1. If our **df** has columns(x1, x2, y), we need to split the input and output into Numpy Arrays, in order to apply the classifiers in **scikit learn**...saying that..we convert a **Series** into a **NumpyArray**.
+> If our **df** has columns(x1, x2, y), we need to split the input and output into Numpy Arrays, in order to apply the classifiers in **scikit learn**...saying that..we convert a **Series** into a **NumpyArray**.
 ```
 X = np.array(df[['x1','x2']])
 y = np.array(df['y'])
 ```
-> 2. **Train** models in **sklearn**: `classifier.fit()`
+> **Train** models in **sklearn**: `classifier.fit()`
 ```
 from sklearn.linear_model import LogisticRegression
 classifier = LogisticRegression()
@@ -27,8 +27,9 @@ classifier.fit(X,y)
 ```
 <img src="https://user-images.githubusercontent.com/31917400/39083317-9f985d68-455a-11e8-9e54-426359e1c486.jpg" />
 
-Logistic Regression didn't do so well, as it's a linear algorithm. Decision Trees and SVM managed to bound the data well, but..what about this? 
-Let's play with some of these parameters of SVM and tune them in such a way that they bound the desired area! The kernel that works best here is 'rbf', with large values of 'gamma'.
+Logistic Regression didn't do so well, as it's a linear algorithm. Decision Trees and SVM managed to bound the data well, but..what about this?
+
+[Note] Let's play with some of these parameters of SVM and tune them in such a way that they bound the desired area! The kernel that works best here is 'rbf', with large values of 'gamma'.
  - **kernel**(string): 'linear', 'poly', 'rbf'.
    - **C**(float): for 'linear'. wiggle, wiggle
    - **degree**(integer): for 'polynomial' kernel only.
@@ -37,7 +38,9 @@ Let's play with some of these parameters of SVM and tune them in such a way that
 classifier = SVC(kernel = 'rbf', gamma = 200)
 classifier.fit(X,y)
 ```
-> 3. Validation-Prep (data splitting)
+## But training our model is not that simple. Before training, we should think about "how to separate into training set & testing set".
+
+> Before modelling_01, Validation-Prep (data splitting)
  - Regression: it predicts or returns a **value**
  - Classification: it determines or returns a **state**(+/-, Y/N, Cat/Dog/Bird...where the data-pt belongs to..)
 <img src="https://user-images.githubusercontent.com/31917400/39257585-cac6de22-48a9-11e8-8f45-1bad945142f6.jpg" />
@@ -54,6 +57,12 @@ from sklearn.cross_validation import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
 ```
+
+
+
+
+
+
 -------------------------------------------------------------------------------------------------------------------------------------
 > 4. Performance: How well is my model doing ? (Validation with test results)
 
