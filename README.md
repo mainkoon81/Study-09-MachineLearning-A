@@ -45,7 +45,7 @@ But how are you sure if our model is correct or not ? thus we say:
  - Step_3)**testing** our model: testing
 
 ## > Step_1)
-### Here, the problem is your `X` and `y`. Before training our model, note "how to separate our `X` and `y` into training set & testing set"!
+### A. Here, the problem is your `X` and `y`. Before training our model, note "how to separate our `X` and `y` into training set & testing set"!
 ## `train_test_split(X, y, test_size, random_state)`
  - X_train: The training input
  - X_test: The testing input
@@ -58,9 +58,8 @@ from sklearn.cross_validation import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
 ```
-### Another problem is we should save our 'testing set' for later. Play along with 'training set' solely.
-### Cross Validation
-   - the best model-complexity would be the point where these two graphs just start to distance from each other. 
+### B. Another problem is we should save our 'testing set' for later. Play along with 'training set' solely, using `Cross Validation`.
+The best model-complexity would be the point where these two graphs just start to distance from each other. 
 <img src="https://user-images.githubusercontent.com/31917400/39399711-b425a720-4b1a-11e8-8cdf-1736fc1631c8.jpg" />
 
  - EX) **K-fold** Cross Validation
