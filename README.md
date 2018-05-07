@@ -41,12 +41,12 @@ Next step would be using our model: `classifier.fit(X,y)` then `classifier.predi
 ---------------------------------------------------------------------------------------------------------------------------------------
 # But how are you sure if our model is worth or not ? 
 Thus, we say:
- - Step_00:**split**on data - training set & testing set. 
- - Step_01:**train** our model within Cross-Validation frame - train-test,train-test,train-test,train-test,train-test....AVG! 
+ - Step_00: **split** on data - training set & testing set. 
+ - Step_01: **train** our model within Cross-Validation frame - 'train-test','train-test','train-test','train-test','train-test'...AVG! 
    - Note: Split the training set again(into training and testing), but keeping track of the size of testing sets to find the best **model complexity**! 
-   - Note: In each train-test, use our traditional validation metrics. 
- - Step_02:**select the best model**: selecting, using 'learning-curve'.
- - Step_03:**test** our model: final testing, using our traditional validation metrics. 
+   - Note: In each 'train-test', use our traditional validation metrics or 'learning curve'. 
+ - Step_02: **select** the best model.
+ - Step_03: **test** the best model: final testing, using our traditional validation metrics again.
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## > Step_00
 ### Here, the problem is your `X` and `y`. Before training our model, note "how to separate our `X` and `y` into training set & testing set"!
@@ -67,34 +67,48 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
 The best model-complexity would be the point where these two graphs just start to distance from each other. 
 <img src="https://user-images.githubusercontent.com/31917400/39399711-b425a720-4b1a-11e8-8cdf-1736fc1631c8.jpg" />
 
- - EX) **K-fold** Cross Validation
+ - ex) **K-fold** Cross Validation
    - First, dividing our data into a training set / a real-testing set
    - Only in the training set, 
      - 1. Breaking our data into **K-buckets** (K=4)
      - 2. Training our model K times 
        - each time using a different bucket as our **testing set** and the remaining all data-pt(K-1) as our **training set**. 
      - 3. Average the results to get our final model. 
-   
 <img src="https://user-images.githubusercontent.com/31917400/39400592-443556ca-4b2b-11e8-9aae-85aa4861433c.jpg" />
 
-## > Step_02 
-### Now, it's time to care underfitting/overfitting to select the best model.
- - Two Errors:
-   - Under-fitting (over-simplication): Error due to **bias**  
-   - Over-fitting (over-complication): Error due to **variance** 
+## > Step_02
+## > Step_03
+
+-------------------------------------------------------------------------------------------------------------------------------------
+# Validation Metrics 
+
+[Note] What's our model ? 
+ - Classification model: it determines or returns a **state**(+/-, Y/N, Cat/Dog/Bird...where the data-pt belongs to..)
+ - Regression model: it predicts or returns a **value**
+<img src="https://user-images.githubusercontent.com/31917400/39257585-cac6de22-48a9-11e8-8f45-1bad945142f6.jpg" />
+
+[Note] Two Errors: Underfitting or Overfitting ?
+ - Under-fitting (over-simplication): Error due to **bias**  
+ - Over-fitting (over-complication): Error due to **variance** 
 <img src="https://user-images.githubusercontent.com/31917400/39399635-489d9a4a-4b19-11e8-8b08-e8125166e173.jpg" />
 
- - EX) **Learning Curve** (NO.of training_pt VS Error_size)
-   - It helps detect overfitting/underfitting
+# Validation I. (common)
+
+## Metric_01: Learning Curve...`learning_curve(estimator, X, y)` 
+ - It compares`training set_size` with `Error_size`
+ - It helps detect overfitting/underfitting
      - Of course, when we train our model with small size of data, testing with CrossValidation will throw large size of error !
-   - See where the errors converge to..which will tell under/over-fitting..
+ - See where the errors converge to..which will tell under/over-fitting..
 <img src="https://user-images.githubusercontent.com/31917400/39400828-b385dde8-4b2f-11e8-92a5-18574c54be5b.jpg" />
 
-## `learning_curve(estimator, X, y)`
 ```
 train_sizes, train_scores, test_scores = learning_curve(
     estimator, X, y, cv=None, n_jobs=1, train_sizes=np.linspace(0.1, 1.0, num_trainings))
 ```
+
+
+
+
  - `estimator`: is the actual classifier we're using for the data
    - LogisticRegression(), GradientBoostingClassifier(), SVC(), etc
  - `X` and `y` is our data, split into **features** and **labels**.
@@ -106,8 +120,10 @@ train_sizes, train_scores, test_scores = learning_curve(
     - The Logistic Regression model has a low training and testing score ==> higher error
     - The Decision Tree model has a high training and testing score ==> lower error
     - The Support Vector Machine model has a high training score, and a low testing score ==> lower train error & higher testing error
-
 <img src="https://user-images.githubusercontent.com/31917400/39401453-6f46cd1e-4b3d-11e8-872c-9305d7f40f83.jpg" />
+
+
+
 
 ```
 from sklearn.linear_model import LogisticRegression
@@ -153,6 +169,10 @@ def draw_learning_curves(X, y, estimator, num_trainings):
 
     plt.show()
 ```
+
+
+
+
 Therefore, 
  - in Logistic Regression, 
    - we pick the model with the highest F1-Score. 
@@ -218,28 +238,7 @@ best_clf = grid_fit.best_estimator_
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--------------------------------------------------------------------------------------------------------------------------------------
-> Performance: How well is my model doing ? (Model-Validation with test results)
- - Regression: it predicts or returns a **value**
- - Classification: it determines or returns a **state**(+/-, Y/N, Cat/Dog/Bird...where the data-pt belongs to..)
-<img src="https://user-images.githubusercontent.com/31917400/39257585-cac6de22-48a9-11e8-8f45-1bad945142f6.jpg" />
-
-# 1) Validation I. (Classifier Model)
+# Validation II. (Classifier Model)
  - with `**Confusion-Matrix**`
 <img src="https://user-images.githubusercontent.com/31917400/39336893-b9a1263a-49b1-11e8-88c1-d59895c7dbe4.jpg" />
 
@@ -282,7 +281,7 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
  - How to construct those values? Examine every inch of the model based on "TPr&FPr"...For example, 
 <img src="https://user-images.githubusercontent.com/31917400/39336710-ec5aa66a-49b0-11e8-97c3-8a86ec1b1800.jpg" />
 
-# 2) Validation II. (Regression Model) 
+# Validation III. (Regression Model) 
  - with `**R-Squared**`
 
 ## Metric_01: MSE & R-Squared
