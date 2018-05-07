@@ -49,7 +49,7 @@ Thus, we say:
  - Step_03: **test** the best model with our `real testing set`: Fit and validate, using our **traditional validation metrics** again.
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## > Step_00
-### Here, the problem is your `X` and `y`. Before training our model, note "how to separate our `X` and `y` into training set & testing set"!
+### Here, problem is your `X` and `y`. Before training our model, note "how to separate our `X` and `y` into training set & testing set"!
 ## `train_test_split(X, y, test_size, random_state)`
  - X_train: The training input
  - X_test: The testing input
