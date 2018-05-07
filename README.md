@@ -58,9 +58,11 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
 
 
 
--------------------------------------------------------------------------------------------------------------------------------------
-> 4. Performance: How well is my model doing ? (Validation with test results)
 
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+> Performance: How well is my model doing ? (Model-Validation with test results)
  - Regression: it predicts or returns a **value**
  - Classification: it determines or returns a **state**(+/-, Y/N, Cat/Dog/Bird...where the data-pt belongs to..)
 <img src="https://user-images.githubusercontent.com/31917400/39257585-cac6de22-48a9-11e8-8f45-1bad945142f6.jpg" />
