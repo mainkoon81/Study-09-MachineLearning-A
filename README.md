@@ -38,14 +38,8 @@ Logistic Regression didn't do so well, as it's a linear algorithm. Decision Tree
 classifier = SVC(kernel = 'rbf', gamma = 200)
 classifier.fit(X,y)
 ```
-## But training our model is not that simple. Before training, we should think about "how to separate into training set & testing set".
-
-> Before modelling_01, Validation-Prep (data splitting)
- - Regression: it predicts or returns a **value**
- - Classification: it determines or returns a **state**(+/-, Y/N, Cat/Dog/Bird...where the data-pt belongs to..)
-<img src="https://user-images.githubusercontent.com/31917400/39257585-cac6de22-48a9-11e8-8f45-1bad945142f6.jpg" />
-
-## Split...`train_test_split(X, y, test_size)`
+## But before training, note "how to separate into training set & testing set"!
+## `train_test_split(X, y, test_size)`
  - X_train: The training input
  - X_test: The testing input
  - y_train: The training labels
@@ -65,6 +59,10 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
 
 -------------------------------------------------------------------------------------------------------------------------------------
 > 4. Performance: How well is my model doing ? (Validation with test results)
+
+ - Regression: it predicts or returns a **value**
+ - Classification: it determines or returns a **state**(+/-, Y/N, Cat/Dog/Bird...where the data-pt belongs to..)
+<img src="https://user-images.githubusercontent.com/31917400/39257585-cac6de22-48a9-11e8-8f45-1bad945142f6.jpg" />
 
 # 1) Validation I. (Classifier Model)
  - with `**Confusion-Matrix**`
