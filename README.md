@@ -95,9 +95,8 @@ This `kf` spits out a bunch of pairs of 'train_indices, test_indices'.
  - Over-fitting (over-complication): Error due to **variance** 
 <img src="https://user-images.githubusercontent.com/31917400/39399635-489d9a4a-4b19-11e8-8b08-e8125166e173.jpg" />
 
-# Validation I. (common)
-
-## Metric_01: Learning Curve...`learning_curve(estimator, X, y)` 
+# Pre-Validation
+## Learning Curve...`learning_curve(estimator, X, y)` 
  - It compares`training set_size` with `Error_size`
  - It helps detect overfitting/underfitting
      - Of course, when we train our model with small size of data, testing with CrossValidation will throw large size of error !
@@ -241,7 +240,7 @@ best_clf = grid_fit.best_estimator_
 
 
 
-# Validation II. (Classifier Model)
+# Validation I. (Classifier Model)
  - with `**Confusion-Matrix**`
 <img src="https://user-images.githubusercontent.com/31917400/39336893-b9a1263a-49b1-11e8-88c1-d59895c7dbe4.jpg" />
 
@@ -284,7 +283,7 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
  - How to construct those values? Examine every inch of the model based on "TPr&FPr"...For example, 
 <img src="https://user-images.githubusercontent.com/31917400/39336710-ec5aa66a-49b0-11e8-97c3-8a86ec1b1800.jpg" />
 
-# Validation III. (Regression Model) 
+# Validation II. (Regression Model) 
  - with `**R-Squared**`
 
 ## Metric_01: MSE & R-Squared
