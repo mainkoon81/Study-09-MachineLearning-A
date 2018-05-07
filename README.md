@@ -27,7 +27,7 @@ classifier.fit(X,y)
 ```
 <img src="https://user-images.githubusercontent.com/31917400/39083317-9f985d68-455a-11e8-9e54-426359e1c486.jpg" />
 
-Logistic Regression didn't do so well, as it's a linear algorithm. Decision Trees and SVM managed to bound the data well, but..what about this?
+Logistic Regression didn't do so well, as it's a linear algorithm. Decision Trees and SVM managed to bound the data well, but..what about this ?
 
 [Note] Let's play with some of these parameters of SVM and tune them in such a way that they bound the desired area! The kernel that works best here is 'rbf', with large values of 'gamma'.
  - **kernel**(string): 'linear', 'poly', 'rbf'.
@@ -39,13 +39,14 @@ classifier = SVC(kernel = 'rbf', gamma = 200)
 classifier.fit(X,y)
 ```
 Next step would be using our model: `classifier.fit(X,y)` then `classifier.predict(new_X, new_y)`
-But how are you sure if our model is correct or not ? thus we say:
- - Step_1)**training** our model: training(training + testing)
- - Step_2)**selecting the best model**:
+# But how are you sure if our model is correct or not ? 
+Thus, we say:
+ - Step_1)**training** our model: training(training + testing), using 'cross-validation'
+ - Step_2)**selecting the best model**: selecting, using 'validation' or 'learning-curve'
  - Step_3)**testing** our model: testing
 
 ## > Step_1)
-### A. Here, the problem is your `X` and `y`. Before training our model, note "how to separate our `X` and `y` into training set & testing set"!
+### 0A. Here, the problem is your `X` and `y`. Before training our model, note "how to separate our `X` and `y` into training set & testing set"!
 ## `train_test_split(X, y, test_size, random_state)`
  - X_train: The training input
  - X_test: The testing input
@@ -58,7 +59,7 @@ from sklearn.cross_validation import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
 ```
-### B. Another problem is we should save our 'testing set' for later. Play along with 'training set' solely, using `Cross Validation`.
+### 0B. Another problem is we should save our 'testing set' for later. Play along with 'training set' solely, using `Cross Validation`.
 The best model-complexity would be the point where these two graphs just start to distance from each other. 
 <img src="https://user-images.githubusercontent.com/31917400/39399711-b425a720-4b1a-11e8-8cdf-1736fc1631c8.jpg" />
 
