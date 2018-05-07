@@ -45,7 +45,8 @@ Thus, we say:
  - Step_01: **train** our model within Cross-Validation frame - 'train-test','train-test','train-test','train-test','train-test'...AVG! 
    - Note: Split the training set again(into training and testing), but keeping track of the size of testing sets to find the best **model complexity**!
    - Note: Prior to validation work, solve the problem of over/underfitting, using 'learning curve'.
-     - Here, we can decide the better size of training or testing set.   
+     - Of course, when we train our model with small size of data, testing with CrossValidation will throw large size of error !
+     - Eventually, we can decide the optimal size of training or testing set.   
  - Step_02: **select** and work with the best model 
     - Note: In each fitting on 'train & test', use our **traditional validation metrics**, then find the AVG. 
  - Step_03: **test** the best model with our `real testing set`: Fit and validate, using our **traditional validation metrics** again.
@@ -98,8 +99,6 @@ This `kf` spits out a bunch of pairs of 'train_indices, test_indices'.
 
 ## > Pre-validation: `learning_curve(estimator, X, y)` 
  - It compares`training set_size` with `Error_size`
- - It helps detect overfitting/underfitting
-     - Of course, when we train our model with small size of data, testing with CrossValidation will throw large size of error !
  - See where the errors converge to..which will tell under/over-fitting..
 <img src="https://user-images.githubusercontent.com/31917400/39400828-b385dde8-4b2f-11e8-92a5-18574c54be5b.jpg" />
 
