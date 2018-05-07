@@ -1,13 +1,13 @@
 # Study-09-MachineLearning-A
 
 ----------------------------------------------------------------------------------------------------------------------------------------
-## Warming-Up
-> If our **df** has columns(x1, x2, y), we need to split the input and output into Numpy Arrays, in order to apply the classifiers in **scikit learn**...saying that..we convert a **Series** into a **NumpyArray**.
+## Training our model
+If our **df** has columns(x1, x2, y), we need to split the input and output into Numpy Arrays, in order to apply the classifiers in **scikit learn**...saying that..we convert a **Series** into a **NumpyArray**.
 ```
 X = np.array(df[['x1','x2']])
 y = np.array(df['y'])
 ```
-> **Train** models in **sklearn**: `classifier.fit()`
+**Train** models in **sklearn**: `classifier.fit()`
 ```
 from sklearn.linear_model import LogisticRegression
 classifier = LogisticRegression()
@@ -38,12 +38,19 @@ Logistic Regression didn't do so well, as it's a linear algorithm. Decision Tree
 classifier = SVC(kernel = 'rbf', gamma = 200)
 classifier.fit(X,y)
 ```
-# Here, the problem is your `X` and `y`. Before training, note "how to separate into training set & testing set"!
-## `train_test_split(X, y, test_size)`
+Next step would be using our model: `classifier.fit(X,y)` then `classifier.predict(new_X, new_y)`
+But how are you sure if our model is correct or not ? thus we say:
+ - Step_1)**training** our model: training(training + testing)
+ - Step_2)**selecting the best model**:
+ - Step_3)**testing** our model: testing
+
+## > Step_1)
+### Here, the problem is your `X` and `y`. Before training our model, note "how to separate our `X` and `y` into training set & testing set"!
+## `train_test_split(X, y, test_size, random_state)`
  - X_train: The training input
  - X_test: The testing input
- - y_train: The training labels
- - y_test: The testing labels
+ - y_train: The training **labels**
+ - y_test: The testing **labels**
 ```
 X = np.array(data[['x1', 'x2']])
 y = np.array(data['y'])
@@ -51,7 +58,8 @@ from sklearn.cross_validation import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
 ```
-# Another problem is 
+### Another problem is we should save our 'testing set' for later. Play along with 'training set' solely.
+
 
 
 
@@ -273,6 +281,15 @@ grid_fit = grid_obj.fit(X, y)
 ```
 best_clf = grid_fit.best_estimator_
 ```
+
+
+
+
+
+
+
+
+
 # 4) final example
 Improving a model with Grid Search
  - This initial model will overfit heavily. We use Grid Search to find better parameters for this model, to reduce the overfitting.
@@ -361,105 +378,4 @@ Woah! Some heavy overfitting there. Not just from looking at the graph, but also
             min_weight_fraction_leaf=0.0, presort=False, random_state=42,
             splitter='best')`
 GridSearch improved the `F1 Score` from 0.7 to 0.8 (and we lost some training score, but this is ok). Also, if you look at the plot, the second model has a much simpler boundary, which implies that it's less likely to overfit.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
