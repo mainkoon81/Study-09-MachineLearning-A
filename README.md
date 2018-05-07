@@ -43,7 +43,7 @@ Next step would be using our model: `classifier.fit(X,y)` then `classifier.predi
 Thus, we say:
  - Step_00: **split** on data - training set & `real testing set`. 
  - Step_01: **train** our model within Cross-Validation frame - 'train-test','train-test','train-test','train-test','train-test'...AVG! 
-   - Note: Split the training set again(into training and testing), but keeping track of the size of testing sets to find the best **model complexity**!
+   - Note: Split the training set again(into training and testing), but keeping track of the size of testing sets to find the best **model complexity** (degree 1? 2? 3?)
    - Note: Prior to validation work, solve the problem of over/underfitting, using 'learning curve'.
      - Of course, when we train our model with small size of data, testing with CrossValidation will throw large size of error !
      - Eventually, we can decide the optimal size of training or testing set.   
