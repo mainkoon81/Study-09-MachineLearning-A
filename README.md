@@ -101,13 +101,13 @@ This `kf` spits out a bunch of pairs of 'train_indices, test_indices'.
  - It compares`training set_size` with `Error_size`
  - See where the errors converge to..which will tell under/over-fitting.
  - It spits out the lists of `size of the training set` and the corresponding lists of `scores` of training/testing.
+ - As we increase the size of training set, in general, **'training error'** would increase (because of entropy?) while **'testing error'**(fitting on new data) would decrease because our models become better.   
 <img src="https://user-images.githubusercontent.com/31917400/39400828-b385dde8-4b2f-11e8-92a5-18574c54be5b.jpg" />
 
 ```
 train_sizes, train_scores, test_scores = learning_curve(
     estimator, X, y, cv=None, n_jobs=1, train_sizes=np.linspace(0.1, 1.0, num_trainings))
 ```
- - As we increase the size of training set, in general, 'training error' would increase (because of entropy?) while 'testing error'(fitting on new data) would decrease because our model becomes better.   
  - `estimator`: is the actual classifier we're using for the data
    - LogisticRegression(), GradientBoostingClassifier(), SVC(), etc
  - `X` and `y` is our data, split into **features** and **labels**.
@@ -120,9 +120,6 @@ train_sizes, train_scores, test_scores = learning_curve(
     - The Decision Tree model has a high training and testing score ==> lower error
     - The Support Vector Machine model has a high training score, and a low testing score ==> lower train error & higher testing error
 <img src="https://user-images.githubusercontent.com/31917400/39401453-6f46cd1e-4b3d-11e8-872c-9305d7f40f83.jpg" />
-
-
-
 
 ```
 from sklearn.linear_model import LogisticRegression
