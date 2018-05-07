@@ -59,7 +59,19 @@ from sklearn.cross_validation import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
 ```
 ### Another problem is we should save our 'testing set' for later. Play along with 'training set' solely.
+### Cross Validation
+   - the best model-complexity would be the point where these two graphs just start to distance from each other. 
+<img src="https://user-images.githubusercontent.com/31917400/39399711-b425a720-4b1a-11e8-8cdf-1736fc1631c8.jpg" />
 
+ - EX) **K-fold** Cross Validation
+   - First, dividing our data into a training set / a real-testing set
+   - Only in the training set, 
+     - 1. Breaking our data into **K-buckets** (K=4)
+     - 2. Training our model K times 
+       - each time using a different bucket as our **testing set** and the remaining all data-pt(K-1) as our **training set**. 
+     - 3. Average the results to get our final model. 
+   
+<img src="https://user-images.githubusercontent.com/31917400/39400592-443556ca-4b2b-11e8-9aae-85aa4861433c.jpg" />
 
 
 
@@ -148,20 +160,7 @@ r2_score(y_true, y_pred)
    - Over-fitting (over-complication): Error due to **variance** 
 <img src="https://user-images.githubusercontent.com/31917400/39399635-489d9a4a-4b19-11e8-8b08-e8125166e173.jpg" />
 
- - But we cannot use our **test data** to train our model like above(model selection). What should we do ? 
- - **Cross Validation** to select model.
-   - the best model-complexity would be the point where these two graphs just start to distance from each other. 
-<img src="https://user-images.githubusercontent.com/31917400/39399711-b425a720-4b1a-11e8-8cdf-1736fc1631c8.jpg" />
 
- - EX) **K-fold** Cross Validation
-   - First, dividing our data into a training set / a real-testing set
-   - Only in the training set, 
-     - 1. Breaking our data into **K-buckets** (K=4)
-     - 2. Training our model K times 
-       - each time using a different bucket as our **testing set** and the remaining all data-pt(K-1) as our **training set**. 
-     - 3. Average the results to get our final model. 
-   
-<img src="https://user-images.githubusercontent.com/31917400/39400592-443556ca-4b2b-11e8-9aae-85aa4861433c.jpg" />
 
  - EX) **Learning Curve** (NO.of training_pt VS Error_size)
    - It helps detect overfitting/underfitting
