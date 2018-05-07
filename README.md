@@ -107,10 +107,7 @@ This `kf` spits out a bunch of pairs of 'train_indices, test_indices'.
 train_sizes, train_scores, test_scores = learning_curve(
     estimator, X, y, cv=None, n_jobs=1, train_sizes=np.linspace(0.1, 1.0, num_trainings))
 ```
-
-
-
-
+ - As we increase the size of training set, in general, 'training error' would increase (because of entropy?) while 'testing error'(fitting on new data) would decrease because our model becomes better.   
  - `estimator`: is the actual classifier we're using for the data
    - LogisticRegression(), GradientBoostingClassifier(), SVC(), etc
  - `X` and `y` is our data, split into **features** and **labels**.
