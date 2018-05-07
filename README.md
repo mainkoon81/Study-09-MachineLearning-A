@@ -100,7 +100,7 @@ This `kf` spits out a bunch of pairs of 'train_indices, test_indices'.
 ## > Pre-validation: `learning_curve(estimator, X, y)` 
  - It compares`training set_size` with `Error_size`
  - See where the errors converge to..which will tell under/over-fitting.
- - It spits out the `size of the training set` and `scores` of training/testing.
+ - It spits out the lists of `size of the training set` and the corresponding lists of `scores` of training/testing.
 <img src="https://user-images.githubusercontent.com/31917400/39400828-b385dde8-4b2f-11e8-92a5-18574c54be5b.jpg" />
 
 ```
