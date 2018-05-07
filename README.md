@@ -95,7 +95,7 @@ This `kf` spits out a bunch of pairs of 'train_indices, test_indices'.
  - Over-fitting (over-complication): Error due to **variance** 
 <img src="https://user-images.githubusercontent.com/31917400/39399635-489d9a4a-4b19-11e8-8b08-e8125166e173.jpg" />
 
-### Pre-validation: Learning Curve...`learning_curve(estimator, X, y)` 
+## Pre-validation: `learning_curve(estimator, X, y)` 
  - It compares`training set_size` with `Error_size`
  - It helps detect overfitting/underfitting
      - Of course, when we train our model with small size of data, testing with CrossValidation will throw large size of error !
