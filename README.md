@@ -76,6 +76,8 @@ The best model-complexity would be the point where these two graphs just start t
      - 3. Average the results to get our final model. 
 <img src="https://user-images.githubusercontent.com/31917400/39400592-443556ca-4b2b-11e8-9aae-85aa4861433c.jpg" />
 
+This `kf` spits out a bunch of pairs of 'train_indices, test_indices'. 
+
 ## > Step_02
 ## > Step_03
 
