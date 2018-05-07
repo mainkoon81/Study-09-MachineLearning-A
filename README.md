@@ -105,8 +105,7 @@ This `kf` spits out a bunch of pairs of 'train_indices, test_indices'.
 <img src="https://user-images.githubusercontent.com/31917400/39400828-b385dde8-4b2f-11e8-92a5-18574c54be5b.jpg" />
 
 ```
-train_sizes, train_scores, test_scores = learning_curve(
-    estimator, X, y, cv=None, n_jobs=1, train_sizes=np.linspace(0.1, 1.0, num_trainings))
+train_sizes, train_scores, test_scores = learning_curve(estimator, X, y, cv=None, n_jobs=1, train_sizes=np.linspace(0.1, 1.0, num_trainings))
 ```
  - `estimator`: is the actual classifier we're using for the data
    - LogisticRegression(), GradientBoostingClassifier(), SVC(), etc
