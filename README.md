@@ -41,12 +41,12 @@ classifier.fit(X,y)
 Next step would be using our model: `classifier.fit(X,y)` then `classifier.predict(new_X, new_y)`
 # But how are you sure if our model is correct or not ? 
 Thus, we say:
- - Step_1)**training** our model: training(training + testing), using 'cross-validation'
- - Step_2)**selecting the best model**: selecting, using 'validation' or 'learning-curve'
- - Step_3)**testing** our model: testing
+ - Step_01:**training** our model: training(training + testing), using 'cross-validation'
+ - Step_02:**selecting the best model**: selecting, using 'learning-curve'
+ - Step_03:**testing** our model: testing
 
-## > Step_1)
-### a. Here, the problem is your `X` and `y`. Before training our model, note "how to separate our `X` and `y` into training set & testing set"!
+## > Step_01
+### a) Here, the problem is your `X` and `y`. Before training our model, note "how to separate our `X` and `y` into training set & testing set"!
 ## `train_test_split(X, y, test_size, random_state)`
  - X_train: The training input
  - X_test: The testing input
@@ -59,7 +59,7 @@ from sklearn.cross_validation import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
 ```
-### b. Another problem is we should save our 'testing set' for later. Play along with 'training set' solely, using `Cross Validation`.
+### b) Another problem is we should save our 'testing set' for later. Play along with 'training set' solely, using `Cross Validation`.
 The best model-complexity would be the point where these two graphs just start to distance from each other. 
 <img src="https://user-images.githubusercontent.com/31917400/39399711-b425a720-4b1a-11e8-8cdf-1736fc1631c8.jpg" />
 
@@ -72,6 +72,33 @@ The best model-complexity would be the point where these two graphs just start t
      - 3. Average the results to get our final model. 
    
 <img src="https://user-images.githubusercontent.com/31917400/39400592-443556ca-4b2b-11e8-9aae-85aa4861433c.jpg" />
+
+## > Step_02 
+### a) We select the best model. Now time to care underfitting/overfitting
+ - Two Errors:
+   - Under-fitting (over-simplication): Error due to **bias**  
+   - Over-fitting (over-complication): Error due to **variance** 
+<img src="https://user-images.githubusercontent.com/31917400/39399635-489d9a4a-4b19-11e8-8b08-e8125166e173.jpg" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -154,11 +181,32 @@ r2_score(y_true, y_pred)
      - DF for SSR: just the number of predictor variables(Reduced - Full)
 <img src="https://user-images.githubusercontent.com/31917400/39673142-9d22219c-512e-11e8-8a6b-a10c0009b375.jpg" />
 
-# 3) Model Selection
- - Two Errors:
-   - Under-fitting (over-simplication): Error due to **bias**  
-   - Over-fitting (over-complication): Error due to **variance** 
-<img src="https://user-images.githubusercontent.com/31917400/39399635-489d9a4a-4b19-11e8-8b08-e8125166e173.jpg" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
