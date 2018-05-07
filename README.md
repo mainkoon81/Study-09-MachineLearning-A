@@ -97,7 +97,8 @@ This `kf` spits out a bunch of pairs of 'train_indices, test_indices'.
  - Over-fitting (over-complication): Error due to **variance** 
 <img src="https://user-images.githubusercontent.com/31917400/39722493-d97eebd6-523a-11e8-96a5-5ff3e226e06b.jpg" />
 
-## > Pre-validation I: `learning_curve(estimator, X, y)` 
+## > Pre-validation I: `learning_curve(estimator, X, y)`
+ - **Fixing under/overfitting**
  - It compares`training set_size` with `Error_size`
  - See where the errors converge to..which will tell under/over-fitting.
  - It spits out the lists of `size of the training set` and the corresponding lists of `scores` of training/testing.
@@ -163,8 +164,10 @@ def draw_learning_curves(X, y, estimator, num_trainings):
 
     plt.show()
 ```
-## > Pre-validation II: `GridSearchCV(clf, parameters, scoring)` 
-Basically, we pick the model with the highest F1-Score, and these are what constitute our models.  
+## > Pre-validation II: `GridSearchCV(clf, parameters, scoring)`
+ - Particularly in SVM, it helps **optimize parameters**
+
+> Basically, these are what constitute our models, and we would pick the model producing the highest F1-Score.  
  - in Logistic Regression, 
    - **parameters:** coefficients of the polynomial 
    - **Hyper(meta)-parameter:** the degree of the polynomial 
