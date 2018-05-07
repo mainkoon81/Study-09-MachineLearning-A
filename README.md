@@ -97,7 +97,7 @@ This `kf` spits out a bunch of pairs of 'train_indices, test_indices'.
  - Over-fitting (over-complication): Error due to **variance** 
 <img src="https://user-images.githubusercontent.com/31917400/39722493-d97eebd6-523a-11e8-96a5-5ff3e226e06b.jpg" />
 
-## > Pre-validation: `learning_curve(estimator, X, y)` 
+## > Pre-validation I: `learning_curve(estimator, X, y)` 
  - It compares`training set_size` with `Error_size`
  - See where the errors converge to..which will tell under/over-fitting.
  - It spits out the lists of `size of the training set` and the corresponding lists of `scores` of training/testing.
@@ -163,9 +163,8 @@ def draw_learning_curves(X, y, estimator, num_trainings):
 
     plt.show()
 ```
-
-
-Basically, we pick the model with the highest F1-Score, but 
+## > Pre-validation II: `GridSearchCV(clf, parameters, scoring)` 
+Basically, we pick the model with the highest F1-Score, and these are what constitute our models.  
  - in Logistic Regression, 
    - **parameters:** coefficients of the polynomial 
    - **Hyper(meta)-parameter:** the degree of the polynomial 
@@ -177,10 +176,8 @@ Basically, we pick the model with the highest F1-Score, but
    - **Hyper(meta)-parameters:** C_value, degree, gamma, etc) 
 <img src="https://user-images.githubusercontent.com/31917400/39488793-431e5956-4d7b-11e8-94a8-80a5c05852b5.jpg" />
 
-# By the way, in **SVM**, tuning the parameters can be a lot of work, and **GridSearchCV**, a sklearn tool can offer an optimal parameter tune almost automatically. 
-
-## The optimization in SVM:
-
+## Particularly, in **SVM**, tuning the parameters can be CRAZY, and `GridSearchCV` in a sklearn tool can offer an optimal parameter tune automatically. For example, 
+### The optimization in SVM:
  - **a) Select Parameters**
 Let's say we'd like to decide between the following parameters:
    - kernel: `poly` or `rbf`.
@@ -209,22 +206,7 @@ grid_fit = grid_obj.fit(X, y)
 ```
 best_clf = grid_fit.best_estimator_
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+---------------------------------------------------------------------------------------------------------------------------------------
 # Validation I. (Classifier Model)
  - with `**Confusion-Matrix**`
 <img src="https://user-images.githubusercontent.com/31917400/39336893-b9a1263a-49b1-11e8-88c1-d59895c7dbe4.jpg" />
