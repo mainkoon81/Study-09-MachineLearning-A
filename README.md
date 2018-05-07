@@ -38,7 +38,7 @@ Logistic Regression didn't do so well, as it's a linear algorithm. Decision Tree
 classifier = SVC(kernel = 'rbf', gamma = 200)
 classifier.fit(X,y)
 ```
-## Here, the problem is your `X` and `y`. Before training, note "how to separate into training set & testing set"!
+# Here, the problem is your `X` and `y`. Before training, note "how to separate into training set & testing set"!
 ## `train_test_split(X, y, test_size)`
  - X_train: The training input
  - X_test: The testing input
@@ -51,6 +51,7 @@ from sklearn.cross_validation import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
 ```
+
 
 
 
