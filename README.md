@@ -95,7 +95,7 @@ This `kf` spits out a bunch of pairs of 'train_indices, test_indices'.
 [Note] Two Errors: Underfitting or Overfitting ?
  - Under-fitting (over-simplication): Error due to **bias**  
  - Over-fitting (over-complication): Error due to **variance** 
-<img src="https://user-images.githubusercontent.com/31917400/39399635-489d9a4a-4b19-11e8-8b08-e8125166e173.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/39722493-d97eebd6-523a-11e8-96a5-5ff3e226e06b.jpg" />
 
 ## > Pre-validation: `learning_curve(estimator, X, y)` 
  - It compares`training set_size` with `Error_size`
