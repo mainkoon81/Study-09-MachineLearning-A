@@ -165,8 +165,7 @@ def draw_learning_curves(X, y, estimator, num_trainings):
     plt.show()
 ```
 ## > Pre-validation II: `GridSearchCV(clf, parameters, scoring)`
- - Particularly in SVM, it helps **optimize parameters**
-
+ - **optimizing parameters**
 > Basically, these are what constitute our models, and we would pick the model producing the highest F1-Score.  
  - in Logistic Regression, 
    - **parameters:** coefficients of the polynomial 
