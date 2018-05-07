@@ -80,6 +80,127 @@ The best model-complexity would be the point where these two graphs just start t
    - Over-fitting (over-complication): Error due to **variance** 
 <img src="https://user-images.githubusercontent.com/31917400/39399635-489d9a4a-4b19-11e8-8b08-e8125166e173.jpg" />
 
+ - EX) **Learning Curve** (NO.of training_pt VS Error_size)
+   - It helps detect overfitting/underfitting
+     - Of course, when we train our model with small size of data, testing with CrossValidation will throw large size of error !
+   - See where the errors converge to..which will tell under/over-fitting..
+<img src="https://user-images.githubusercontent.com/31917400/39400828-b385dde8-4b2f-11e8-92a5-18574c54be5b.jpg" />
+
+## `learning_curve(estimator, X, y)`
+```
+train_sizes, train_scores, test_scores = learning_curve(
+    estimator, X, y, cv=None, n_jobs=1, train_sizes=np.linspace(0.1, 1.0, num_trainings))
+```
+ - `estimator`: is the actual classifier we're using for the data
+   - LogisticRegression(), GradientBoostingClassifier(), SVC(), etc
+ - `X` and `y` is our data, split into **features** and **labels**.
+ - **train_sizes**: are the sizes of the chunks of data used to draw each point in the curve.
+ - train_scores: are the training scores for the algorithm trained on each chunk of data.
+ - test_scores: are the testing scores for the algorithm trained on each chunk of data.
+   - train_scores and test_scores will come in as a list of 'K'number of values, and this is because the function uses 'K' Fold CrossValidation.
+ - we defined our curves with 'Training and Testing Error', but this function defines them with 'Training and Testing Score'. These are opposite, so the higher the error, the lower the score. Thus, when you see the curve, you need to flip it upside down.
+    - The Logistic Regression model has a low training and testing score ==> higher error
+    - The Decision Tree model has a high training and testing score ==> lower error
+    - The Support Vector Machine model has a high training score, and a low testing score ==> lower train error & higher testing error
+
+<img src="https://user-images.githubusercontent.com/31917400/39401453-6f46cd1e-4b3d-11e8-872c-9305d7f40f83.jpg" />
+
+```
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.svm import SVC
+from sklearn.model_selection import learning_curve
+
+estimator = LogisticRegression()
+estimator = GradientBoostingClassifier()
+estimator = SVC(kernel='rbf', gamma=1000)
+```
+
+It is good to randomize the data before drawing Learning Curves
+```
+def randomize(X, Y):
+    permutation = np.random.permutation(Y.shape[0])
+    X2 = X[permutation,:]
+    Y2 = Y[permutation]
+    return X2, Y2
+
+X2, y2 = randomize(X, y)
+
+def draw_learning_curves(X, y, estimator, num_trainings):
+    train_sizes, train_scores, test_scores = learning_curve(
+        estimator, X2, y2, cv=None, n_jobs=1, train_sizes=np.linspace(0.1, 1.0, num_trainings))
+
+    train_scores_mean = np.mean(train_scores, axis=1)
+    train_scores_std = np.std(train_scores, axis=1)
+    test_scores_mean = np.mean(test_scores, axis=1)
+    test_scores_std = np.std(test_scores, axis=1)
+
+    plt.grid()
+
+    plt.title("Learning Curves")
+    plt.xlabel("Training examples")
+    plt.ylabel("Score")
+
+    plt.plot(train_scores_mean, 'o-', color="g",
+             label="Training score")
+    plt.plot(test_scores_mean, 'o-', color="y",
+             label="Cross-validation score")
+    plt.legend(loc="best")
+
+    plt.show()
+```
+Therefore, 
+ - in Logistic Regression, 
+   - we pick the model with the highest F1-Score. 
+   - parameters: coefficients of the polynomial 
+   - Hyper(meta)-parameter: the degree of the polynomial 
+ - in Decision Tree, 
+   - we pick the model with the highest F1-Score.
+   - parameters: thresholds in the leaves & nodes
+   - Hyper(meta)-parameter: the depth of the trees
+ - in SVM,
+   - we pick the model with the highest F1-Score. 
+   - parameters: Kernels(linear/poly/rbf/sigmoid)
+   - Hyper(meta)-parameter**s**: C_value, degree, gamma, etc) 
+<img src="https://user-images.githubusercontent.com/31917400/39488793-431e5956-4d7b-11e8-94a8-80a5c05852b5.jpg" />
+
+> By the way, in SVM, tuning the parameters can be a lot of work, and GridSearchCV, a sklearn tool can offer an optimal parameter tune almost automatically. The optimization:
+
+**a) Select Parameters**
+Let's say we'd like to decide between the following parameters:
+ - kernel: `poly` or `rbf`.
+ - C: `0.1`, `1`, or `10`.
+
+We pick what are the parameters we want to choose from, and form a `dictionary`. In this dictionary, the keys will be the names of the parameters, and the values will be the lists of possible values for each parameter.
+```
+parameters = {'kernel':['poly', 'rbf'],'C':[0.1, 1, 10]}
+```
+
+**b) Decide Metric**
+What metric we'll use to score each of the candidate models ? F1 ? 
+```
+from sklearn.metrics import make_scorer
+from sklearn.metrics import f1_score
+
+scorer = make_scorer(f1_score)
+```
+
+**c) Creast GridSearch Object**
+Use GridSearch object to fit the data.
+```
+from sklearn.model_selection import GridSearchCV
+
+grid_obj = GridSearchCV(clf, parameters, scoring=scorer)
+grid_fit = grid_obj.fit(X, y)
+```
+
+**d) Get the best model**
+```
+best_clf = grid_fit.best_estimator_
+```
+
+
+
 
 
 
@@ -208,126 +329,6 @@ r2_score(y_true, y_pred)
 
 
 
-
-
- - EX) **Learning Curve** (NO.of training_pt VS Error_size)
-   - It helps detect overfitting/underfitting
-     - Of course, when we train our model with small size of data, testing with CrossValidation will throw large size of error !
-   - See where the errors converge to..which will tell under/over-fitting..
-<img src="https://user-images.githubusercontent.com/31917400/39400828-b385dde8-4b2f-11e8-92a5-18574c54be5b.jpg" />
-
-## `learning_curve(estimator, X, y)`
-```
-train_sizes, train_scores, test_scores = learning_curve(
-    estimator, X, y, cv=None, n_jobs=1, train_sizes=np.linspace(0.1, 1.0, num_trainings))
-```
- - `estimator`: is the actual classifier we're using for the data
-   - LogisticRegression(), GradientBoostingClassifier(), SVC(), etc
- - `X` and `y` is our data, split into **features** and **labels**.
- - **train_sizes**: are the sizes of the chunks of data used to draw each point in the curve.
- - train_scores: are the training scores for the algorithm trained on each chunk of data.
- - test_scores: are the testing scores for the algorithm trained on each chunk of data.
-   - train_scores and test_scores will come in as a list of 'K'number of values, and this is because the function uses 'K' Fold CrossValidation.
- - we defined our curves with 'Training and Testing Error', but this function defines them with 'Training and Testing Score'. These are opposite, so the higher the error, the lower the score. Thus, when you see the curve, you need to flip it upside down.
-    - The Logistic Regression model has a low training and testing score ==> higher error
-    - The Decision Tree model has a high training and testing score ==> lower error
-    - The Support Vector Machine model has a high training score, and a low testing score ==> lower train error & higher testing error
-
-<img src="https://user-images.githubusercontent.com/31917400/39401453-6f46cd1e-4b3d-11e8-872c-9305d7f40f83.jpg" />
-
-```
-from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.svm import SVC
-from sklearn.model_selection import learning_curve
-
-estimator = LogisticRegression()
-estimator = GradientBoostingClassifier()
-estimator = SVC(kernel='rbf', gamma=1000)
-```
-
-It is good to randomize the data before drawing Learning Curves
-```
-def randomize(X, Y):
-    permutation = np.random.permutation(Y.shape[0])
-    X2 = X[permutation,:]
-    Y2 = Y[permutation]
-    return X2, Y2
-
-X2, y2 = randomize(X, y)
-
-def draw_learning_curves(X, y, estimator, num_trainings):
-    train_sizes, train_scores, test_scores = learning_curve(
-        estimator, X2, y2, cv=None, n_jobs=1, train_sizes=np.linspace(0.1, 1.0, num_trainings))
-
-    train_scores_mean = np.mean(train_scores, axis=1)
-    train_scores_std = np.std(train_scores, axis=1)
-    test_scores_mean = np.mean(test_scores, axis=1)
-    test_scores_std = np.std(test_scores, axis=1)
-
-    plt.grid()
-
-    plt.title("Learning Curves")
-    plt.xlabel("Training examples")
-    plt.ylabel("Score")
-
-    plt.plot(train_scores_mean, 'o-', color="g",
-             label="Training score")
-    plt.plot(test_scores_mean, 'o-', color="y",
-             label="Cross-validation score")
-    plt.legend(loc="best")
-
-    plt.show()
-```
-Therefore, 
- - in Logistic Regression, 
-   - we pick the model with the highest F1-Score. 
-   - parameters: coefficients of the polynomial 
-   - Hyper(meta)-parameter: the degree of the polynomial 
- - in Decision Tree, 
-   - we pick the model with the highest F1-Score.
-   - parameters: thresholds in the leaves & nodes
-   - Hyper(meta)-parameter: the depth of the trees
- - in SVM,
-   - we pick the model with the highest F1-Score. 
-   - parameters: Kernels(linear/poly/rbf/sigmoid)
-   - Hyper(meta)-parameter**s**: C_value, degree, gamma, etc) 
-<img src="https://user-images.githubusercontent.com/31917400/39488793-431e5956-4d7b-11e8-94a8-80a5c05852b5.jpg" />
-
-> By the way, in SVM, tuning the parameters can be a lot of work, and GridSearchCV, a sklearn tool can offer an optimal parameter tune almost automatically. The optimization:
-
-**a) Select Parameters**
-Let's say we'd like to decide between the following parameters:
- - kernel: `poly` or `rbf`.
- - C: `0.1`, `1`, or `10`.
-
-We pick what are the parameters we want to choose from, and form a `dictionary`. In this dictionary, the keys will be the names of the parameters, and the values will be the lists of possible values for each parameter.
-```
-parameters = {'kernel':['poly', 'rbf'],'C':[0.1, 1, 10]}
-```
-
-**b) Decide Metric**
-What metric we'll use to score each of the candidate models ? F1 ? 
-```
-from sklearn.metrics import make_scorer
-from sklearn.metrics import f1_score
-
-scorer = make_scorer(f1_score)
-```
-
-**c) Creast GridSearch Object**
-Use GridSearch object to fit the data.
-```
-from sklearn.model_selection import GridSearchCV
-
-grid_obj = GridSearchCV(clf, parameters, scoring=scorer)
-grid_fit = grid_obj.fit(X, y)
-```
-
-**d) Get the best model**
-```
-best_clf = grid_fit.best_estimator_
-```
 
 
 
