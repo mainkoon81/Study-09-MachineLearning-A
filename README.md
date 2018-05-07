@@ -44,9 +44,10 @@ Thus, we say:
  - Step_00: **split** on data - training set & `real testing set`. 
  - Step_01: **train** our model within Cross-Validation frame - 'train-test','train-test','train-test','train-test','train-test'...AVG! 
    - Note: Split the training set again(into training and testing), but keeping track of the size of testing sets to find the best **model complexity**!
-   - Note: Prior to validation work, solve the problem of over/underfitting, using 'learning curve'. 
-   - Note: In each 'train-test', use our **traditional validation metrics**.
- - Step_02: **select** the best model. 
+   - Note: Prior to validation work, solve the problem of over/underfitting, using 'learning curve'.
+     - Here, we can decide the better size of training or testing set.   
+ - Step_02: **select** and work with the best model 
+    - Note: In each fitting on 'train & test', use our **traditional validation metrics**, then find the AVG. 
  - Step_03: **test** the best model with our `real testing set`: Fit and validate, using our **traditional validation metrics** again.
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## > Step_00
