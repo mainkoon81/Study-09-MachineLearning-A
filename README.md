@@ -299,7 +299,7 @@ random.seed(42)
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 ```
-3. Fitting a DecisionTree model. Define the model with default hyperparameters(random_state=42)
+3. Fitting a DecisionTree model. Define the model with default hyperparameters(random_state=42). Note: We didn't use `y_test`. 
 ```
 from sklearn.tree import DecisionTreeClassifier
 clf = DecisionTreeClassifier(random_state=42)
