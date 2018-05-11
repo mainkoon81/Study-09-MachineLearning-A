@@ -217,13 +217,16 @@ best_clf = grid_fit.best_estimator_
 ### Metric_01: Accuracy...`accuracy_score(y_true, y_pred)` 
 ```
 from sklearn.metrics import accuracy_score
-
 accuracy_score(y_true, y_pred)
 ```
 ### But..when Accuracy won't work ?
 <img src="https://user-images.githubusercontent.com/31917400/39308440-594fbf20-495d-11e8-97f5-cd51d15696d7.jpg" />
 
-### Metric_02: Precision, Recall and F_Beta Score
+### Metric_02: Precision, Recall and F_Beta Score...`f1_score(y_true, y_pred)`
+```
+from sklearn.metrics import f1_score
+f1_score(y_true, y_pred)
+```
 Plus, between these two errors, sometimes, depending on situation, the one is more critical over others (FP vs FN)
  - Precision (to capture **FP** and avoid): Out of all data-pt our model diagnosed with **Positive** world, how many did our model classify correctly ? 
  - Recall (to capture **FN** and avoid): Out of all data-pt that are actually **positive**, how many did our model classify correctly ? 
@@ -245,6 +248,10 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
    - Sending promotional material in the mail to potential clients ?--(costly, so FP Warning: a high precision model): Beta=0.5 
 
 ### Metric_03: Roc-Curve (Receiver Operating Characteristic)
+```
+from sklearn.metrics import roc_curve
+roc_curve(y_true, y_score)
+```
  - In the chart of "TPr vs FPr", **the area** under the curve is our metric value. 
  - Consider the data which is now one dimensional, so all the red, blue pt lie in 1 line and we want to find the correct **split**.
 <img src="https://user-images.githubusercontent.com/31917400/39336446-7db2501a-49af-11e8-8248-87bbb0757c1d.jpg" />
@@ -258,7 +265,6 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
 ### Metric_01: MSE & R-Squared
 ```
 from sklearn.metrics import r2_score
-
 r2_score(y_true, y_pred)
 ```
  - Mean **Absolute** Error: The absolute value function is not differentiable. This is not good if we want to use the **gradient descent** methods. 
