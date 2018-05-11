@@ -41,17 +41,19 @@ Next step would be using our model: `classifier.fit(X,y)` then `classifier.predi
 ---------------------------------------------------------------------------------------------------------------------------------------
 # But how are you sure if our model is worth or not ? 
 Thus, we say:
- - Step_00: **split** on data - training set & `real testing set`. 
- - Step_01: **train** our model within Cross-Validation frame - 'train-test','train-test','train-test','train-test','train-test'...AVG! 
-   - Note: Split the training set again(into training and testing), but keeping track of the **size** of testing sets'. We don't know the best 'K' value yet.  
-   - Note: Prior to validation work, solve the problem of over/underfitting, using 'learning curve'.
-     - Of course, when we train our model with small size of data, testing with CrossValidation will throw large size of error !
-     - Eventually, we can decide the optimal size of training or testing set for better modelling. And this hints the best 'K' value. 
- - Step_02: **select** and work with the best model 
-    - Note: In each fitting on 'train & test', use our **traditional validation metrics**, then find the AVG. 
- - Step_03: **test** the best model with our `real testing set`: Fit and validate, using our **traditional validation metrics** again.
+ - Step_00 Split-I: **split** on data - training set & `real testing set`. 
+ - Step_01 Split-II: prepare **Cross-Validation** - 'train-test','train-test','train-test','train-test','train-test'...AVG! 
+   - Split the training set again(into training and testing), but keeping track of the **size** of testing sets'. We don't know the best 'K' value yet.
+   - Of course, when we train our model with small size of data, but testing with CrossValidation will throw large size of error !
+   - Eventually, we can decide the optimal size of training or testing set for better modelling. And this hints the best 'K' value. 
+ - Step_02 Optimization: **Optimize** our model before training(fitting)  
+   - Solve the problem of over/underfitting, using 'LearningCurve'.
+   - Solve the problem of parameter tuning, using 'GridSearch'.
+ - Step_03 Validation Metrics: **fit and select** the best model 
+   - In each fitting on 'train & test', use our **traditional validation metrics**, then find the AVG. 
+ - Step_04: **test** the best model with our `real testing set`: Fit and validate, using our **traditional validation metrics** again.
 ---------------------------------------------------------------------------------------------------------------------------------------
-## > Step_00
+## > Step_00 Split-I.
 ### Here, problem is your `X` and `y`. Before training our model, note "how to separate our `X` and `y` into training set & testing set"!
 ## `train_test_split(X, y, test_size, random_state)`
  - X_train: The training input
@@ -65,7 +67,7 @@ from sklearn.cross_validation import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
 ```
-## > Step_01
+## > Step_01 Split-II.
 ### Another problem is we should save our 'testing set' for later, so Play along with 'training set' solely, using `Cross Validation`.
 The best model-complexity would be the point where these two graphs just start to distance from each other. 
 <img src="https://user-images.githubusercontent.com/31917400/39399711-b425a720-4b1a-11e8-8cdf-1736fc1631c8.jpg" />
@@ -81,12 +83,8 @@ The best model-complexity would be the point where these two graphs just start t
 
 This `kf` spits out a bunch of pairs of 'train_indices, test_indices'. 
 
-## > Step_02
-## > Step_03
-
 -------------------------------------------------------------------------------------------------------------------------------------
-# Validation Metrics 
-
+## > Step_02 Optimization
 [Note] What's our model ? 
  - Classification model: it determines or returns a **state**(+/-, Y/N, Cat/Dog/Bird...where the data-pt belongs to..)
  - Regression model: it predicts or returns a **value**
@@ -210,11 +208,13 @@ best_clf = grid_fit.best_estimator_
 ```
 # NEXT...
 ---------------------------------------------------------------------------------------------------------------------------------------
-# Validation I. (Classifier Model)
+## > Step_03 Validation Metrics 
+
+## Validation I. (Classifier Model)
  - with `**Confusion-Matrix**`
 <img src="https://user-images.githubusercontent.com/31917400/39336893-b9a1263a-49b1-11e8-88c1-d59895c7dbe4.jpg" />
 
-## Metric_01: Accuracy...`accuracy_score(y_true, y_pred)` 
+### Metric_01: Accuracy...`accuracy_score(y_true, y_pred)` 
 ```
 from sklearn.metrics import accuracy_score
 
@@ -223,7 +223,7 @@ accuracy_score(y_true, y_pred)
 ### But..when Accuracy won't work ?
 <img src="https://user-images.githubusercontent.com/31917400/39308440-594fbf20-495d-11e8-97f5-cd51d15696d7.jpg" />
 
-## Metric_02: Precision, Recall and F_Beta Score
+### Metric_02: Precision, Recall and F_Beta Score
 Plus, between these two errors, sometimes, depending on situation, the one is more critical over others (FP vs FN)
  - Precision (to capture **FP** and avoid): Out of all data-pt our model diagnosed with **Positive** world, how many did our model classify correctly ? 
  - Recall (to capture **FN** and avoid): Out of all data-pt that are actually **positive**, how many did our model classify correctly ? 
@@ -244,7 +244,7 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
    - Sending phone notifications about videos a user may like ?--(not much costly: a decent precision and a decent recall): Beta=1
    - Sending promotional material in the mail to potential clients ?--(costly, so FP Warning: a high precision model): Beta=0.5 
 
-## Metric_03: Roc-Curve (Receiver Operating Characteristic)
+### Metric_03: Roc-Curve (Receiver Operating Characteristic)
  - In the chart of "TPr vs FPr", **the area** under the curve is our metric value. 
  - Consider the data which is now one dimensional, so all the red, blue pt lie in 1 line and we want to find the correct **split**.
 <img src="https://user-images.githubusercontent.com/31917400/39336446-7db2501a-49af-11e8-8248-87bbb0757c1d.jpg" />
@@ -252,10 +252,10 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
  - How to construct those values? Examine every inch of the model based on "TPr&FPr"...For example, 
 <img src="https://user-images.githubusercontent.com/31917400/39336710-ec5aa66a-49b0-11e8-97c3-8a86ec1b1800.jpg" />
 
-# Validation II. (Regression Model) 
+## Validation II. (Regression Model) 
  - with `**R-Squared**`
 
-## Metric_01: MSE & R-Squared
+### Metric_01: MSE & R-Squared
 ```
 from sklearn.metrics import r2_score
 
