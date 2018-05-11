@@ -372,4 +372,6 @@ Woah! Some heavy overfitting there. Not just from looking at the graph, but also
             splitter='best')`
 GridSearch improved the `F1 Score` from 0.7 to 0.8 (and we lost some training score, but this is ok). Also, if you look at the plot, the second model has a much simpler boundary, which implies that it's less likely to overfit.
 
-# What's the difference b/w DecisionTreeClassifier & DecisionTreeRgressor ?
+# What's the difference b/w DecisionTreeClassifier & DecisionTreeRegressor ? 
+ - a Decision Tree does Classification, and a DecisionTreeRegressor is a Decision Tree that does Regression. This seems pretty in line with the other class names in the library, e.g. AdaBoostClassifier/Regressor, RandomForestClassifier/Regressor.
+ - Scoring func are different..
