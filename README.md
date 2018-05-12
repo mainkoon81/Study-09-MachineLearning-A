@@ -1,5 +1,9 @@
 # Study-09-MachineLearning-A
 
+## CrossValidation ?
+ - Cross means AVG.
+ - Repeat CV procedure for each ML-modelling method(SVM,DTree,etc)during training, then select the model with minimum CV error. 
+
 ----------------------------------------------------------------------------------------------------------------------------------------
 ## Training our model
 If our **df** has columns(x1, x2, y), we need to split the input and output into Numpy Arrays, in order to apply the classifiers in **scikit learn**...saying that..we convert a **Series** into a **NumpyArray**.
