@@ -173,7 +173,7 @@ def draw_learning_curves(X, y, estimator, num_trainings):
    - **parameters:** coefficients of the polynomial 
    - **Hyper(meta)-parameter:** the degree of the polynomial 
  - in Decision Tree, 
-   - **parameters:** thresholds in the leaves & nodes
+   - **parameters:** thresholds in the leaf & split
    - **Hyper(meta)-parameter:** the depth of the trees
  - in SVM,
    - **parameters:** Kernels(linear/poly/rbf/sigmoid)
