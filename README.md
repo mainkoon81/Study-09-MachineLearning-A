@@ -257,9 +257,10 @@ from sklearn.metrics import roc_curve
 roc_curve(y_true, y_score)
 ```
  - In the ROC curve we look at:
-   - TPR(= Sensitivity = Recall) = # True positives / # positives  = TP / (TP+FN) :"FROM THE WORLD OF (+)"
-   - FPR = # False Positives / # negatives = FP / (FP+TN) :"FROM THE WORLD OF (-)" 
- - In the chart of "TPr vs FPr", **the area** under the curve is our metric value. 
+   - TPr(= Sensitivity = Recall) = # True positives / # positives  = TP / (TP+FN) :"FROM THE WORLD OF (+)"
+   - FPr = # False Positives / # negatives = FP / (FP+TN) :"FROM THE WORLD OF (-)" 
+ - In the chart of "TPr vs FPr", **the area** under the curve is our metric value.
+ - FPr and TPr (ROC metrics) measure the ability to distinguish between the classes.
  - Consider the data which is now one dimensional, so all the red, blue pt lie in 1 line and we want to find the correct **split**.
 <img src="https://user-images.githubusercontent.com/31917400/39336446-7db2501a-49af-11e8-8248-87bbb0757c1d.jpg" />
 
