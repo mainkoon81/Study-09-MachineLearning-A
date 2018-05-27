@@ -271,6 +271,9 @@ roc_curve(y_true, y_score)
  - With a large number of (-) samples: **Precision or Recall** is better because it is not affected by a large number of negative samples. 
  - With a large number of (+) samples: **RocCurve** is better because the precision and recall would reflect mostly the ability of prediction of the positive class and not the negative class which will naturally be harder to detect due to the smaller number of samples.
  - With a balanced: **RocCurve**
+https://www.kdnuggets.com/2017/06/7-techniques-handle-imbalanced-data.html
+
+https://towardsdatascience.com/what-metrics-should-we-use-on-imbalanced-data-set-precision-recall-roc-e2e79252aeba 
 
 ## Validation II. (Regression Model) 
  - with `**R-Squared**`
