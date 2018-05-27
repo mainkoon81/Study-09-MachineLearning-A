@@ -267,6 +267,11 @@ roc_curve(y_true, y_score)
  - How to construct those values? Examine every inch of the model based on "TPr&FPr"...For example, 
 <img src="https://user-images.githubusercontent.com/31917400/39336710-ec5aa66a-49b0-11e8-97c3-8a86ec1b1800.jpg" />
 
+> What if the Target Class is imbalanced? 
+ - With a large number of (-) samples: **Precision or Recall** is better because it is not affected by a large number of negative samples. 
+ - With a large number of (+) samples: **RocCurve** is better because the precision and recall would reflect mostly the ability of prediction of the positive class and not the negative class which will naturally be harder to detect due to the smaller number of samples.
+ - With a balanced: **RocCurve**
+
 ## Validation II. (Regression Model) 
  - with `**R-Squared**`
 
