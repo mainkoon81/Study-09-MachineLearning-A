@@ -210,6 +210,8 @@ grid_fit = grid_obj.fit(X, y)
 ```
 best_clf = grid_fit.best_estimator_
 ```
+[Note]: While `GridSearchCV` works with the explicitly declared values, `RandomizedSearchCV` doesn't search every value. Instead, it samples random subsets and then uses them to find the optimum parameter value, so it's faster. Another great thing about this method is that it samples from value distribution rather than the pre-determined values. RandomizedSearchCV is great when we have a handful no of hyperparameters. 
+
 # NEXT...
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## > Step_03 Validation Metrics 
