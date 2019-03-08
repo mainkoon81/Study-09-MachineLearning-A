@@ -220,6 +220,9 @@ best_clf = grid_fit.best_estimator_
  - with `**Confusion-Matrix**`
 <img src="https://user-images.githubusercontent.com/31917400/39336893-b9a1263a-49b1-11e8-88c1-d59895c7dbe4.jpg" />
 
+ - __FP:__ Positive means REJECTION. It says Rejecting Null Hypothesis which is actually true. 
+ - __FN:__ Negative means ACCEPTION. It says Aceepting Null Hypothesis which is actually false.
+
 ### Metric_01: Accuracy...`accuracy_score(y_true, y_pred)` 
 ```
 from sklearn.metrics import accuracy_score
