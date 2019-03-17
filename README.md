@@ -50,7 +50,7 @@ Thus, we say:
    - Split the training set again(into training and testing), but keeping track of the **size** of testing sets'. We don't know the best 'K' value yet.
    - Of course, when we train our model with small size of data, but testing with CrossValidation will throw large size of error !
    - Eventually, we can decide the optimal size of training or testing set for better modelling. And this hints the best 'K' value. 
- - Step_02 Optimization: **Optimize** our model before training(fitting)  
+ - Step_02 Fitting_Optimization: **Optimize** our model before training  
    - Solve the problem of `over/underfitting`, using **'LearningCurve'**.
    - Solve the problem of `parameter tuning`, using **'GridSearch'**.
  - Step_03 Validation Metrics: **fit and select** the best model 
