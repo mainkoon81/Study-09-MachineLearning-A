@@ -32,7 +32,7 @@ classifier.fit(X,y)
 <img src="https://user-images.githubusercontent.com/31917400/39083317-9f985d68-455a-11e8-9e54-426359e1c486.jpg" />
 
 Logistic Regression didn't do so well, as it's a linear algorithm. Decision Trees and SVM managed to bound the data well, but..what about this crazy dataset on the right ? Only SVM stands alone ? Let's play with some of these parameters of SVM and tune them in such a way that they bound the desired area! The kernel that works best here is 'rbf', with large values of 'gamma'.
- - **kernel**(string): 'linear', 'poly', 'rbf'
+   - **kernel**(string): 'linear', 'poly', 'rbf'
    - **C**(float): for 'linear'. wiggle, wiggle
    - **degree**(integer): for 'polynomial' kernel only
    - **gamma**(float): for 'rbf' kernel only. Right in ur face !
@@ -51,8 +51,8 @@ Thus, we say:
    - Of course, when we train our model with small size of data, but testing with CrossValidation will throw large size of error !
    - Eventually, we can decide the optimal size of training or testing set for better modelling. And this hints the best 'K' value. 
  - Step_02 Optimization: **Optimize** our model before training(fitting)  
-   - Solve the problem of over/underfitting, using 'LearningCurve'.
-   - Solve the problem of parameter tuning, using 'GridSearch'.
+   - Solve the problem of `over/underfitting`, using **'LearningCurve'**.
+   - Solve the problem of `parameter tuning`, using **'GridSearch'**.
  - Step_03 Validation Metrics: **fit and select** the best model 
    - In each fitting on 'train & test', use our **traditional validation metrics**, then find the AVG. 
  - Step_04: **test** the best model with our `real testing set`: Fit and validate, using our **traditional validation metrics** again.
