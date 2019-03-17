@@ -45,16 +45,18 @@ Next step would be using our model: `classifier.fit(X,y)` then `classifier.predi
 ---------------------------------------------------------------------------------------------------------------------------------------
 # But how are you sure if our model is worth or not ? 
 Thus, we say:
- - Step_00 Split-I: **split** on data - training set & `real testing set`. 
+ - Step_00 Split-I: **split** on data - training set & `real testing set`. Set a side our `real testing set`.
  - Step_01 Split-II: prepare **Cross-Validation** - 'train-test','train-test','train-test','train-test','train-test'...AVG! 
    - Split the training set again(into training and testing), but keeping track of the **size** of testing sets'. We don't know the best 'K' value yet.
    - Of course, when we train our model with small size of data, but testing with CrossValidation will throw large size of error !
    - Eventually, we can decide the optimal size of training or testing set for better modelling. And this hints the best 'K' value. 
  - Step_02 Fitting_Optimization: **Optimize** our model before training  
-   - Solve the problem of `over/underfitting`, using **'LearningCurve'** (the regularization of parameters is available of course). 
+   - Solve the problem of `over/underfitting`, using **'LearningCurve'**. 
+     - (the regularization of parameters is available of course). 
    - Solve the problem of `parameter tuning`, using **'GridSearch'**.
  - Step_03 Validation Metrics: **fit and select** the best model 
-   - In each fitting on 'train & test', use our **traditional validation metrics**, then find the AVG. 
+   - In each fitting on 'train & test', use our **traditional validation metrics**, then **find the AVG ???**
+     - (R-sqr is available of course).
  - Step_04: **test** the best model with our `real testing set`: Fit and validate, using our **traditional validation metrics** again.
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## > Step_00 Split-I.
