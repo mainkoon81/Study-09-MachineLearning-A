@@ -51,7 +51,7 @@ Thus, we say:
    - Of course, when we train our model with small size of data, but testing with CrossValidation will throw large size of error !
    - Eventually, we can decide the optimal size of training or testing set for better modelling. And this hints the best 'K' value. 
  - Step_02 Fitting_Optimization: **Optimize** our model before training  
-   - Solve the problem of `over/underfitting`, using **'LearningCurve'**.
+   - Solve the problem of `over/underfitting`, using **'LearningCurve'** (the regularization of parameters is available of course). 
    - Solve the problem of `parameter tuning`, using **'GridSearch'**.
  - Step_03 Validation Metrics: **fit and select** the best model 
    - In each fitting on 'train & test', use our **traditional validation metrics**, then find the AVG. 
