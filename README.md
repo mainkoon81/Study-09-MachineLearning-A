@@ -74,14 +74,11 @@ from sklearn.cross_validation import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
 ```
 ## > Step_01 Split-II.
- - Save our original 'testing set' for later, and now play along with 'training set' solely, using `Cross Validation`.
- - The best **model-complexity** would be the point where these two graphs just start to distance from each other. 
-<img src="https://user-images.githubusercontent.com/31917400/39399711-b425a720-4b1a-11e8-8cdf-1736fc1631c8.jpg" />
-
-### Cross Validation allows us to `compare different ML algorithms` and get a sense of how well they will work in practice! What should I use? SVM? KNN? LogisticReg?
+### Save our original 'testing set' for later, and now focus on 'training set' solely, to use `Cross Validation`.
+### `Cross Validation` allows us to `compare different ML algorithms`. What should I use? SVM? KNN? LogisticReg?
  - Let's say we have a dataset. Then we have 2 things to do. 
-   - 1. Estimate the parameters for the ML model. This means: **`training`**
-   - 2. Evaluate how well the choosen ML model works. This means: **`testing`**
+   - 1. Estimate **parameters** for the ML model. This means: **`training`**
+   - 2. Evaluate **performance** for the ML model. How well the choosen ML model works. This means: **`testing`**
    - So we split the dataset and train & test with each ML model candidate.    
    <img src="https://user-images.githubusercontent.com/31917400/54567422-a7910a80-49cb-11e9-92bf-d31f92ed0a79.jpg" />
    
@@ -92,12 +89,14 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
      - 1. Breaking our data into **K-buckets** (K=4)
      - 2. Training our model K-times 
        - each time using a **different bucket as our testing set** and the remaining as our **training set**. 
-     - 3. After finishing K-times training with K different models, Average the results(**score**) to select the best model(parameters). 
+     - 3. After finishing K-times training with K different models, Average the results(such as **accuracy**) to select the best model(parameters). 
      <img src="https://user-images.githubusercontent.com/31917400/54525092-5a7d4c00-496b-11e9-9548-53d3b7528a75.jpg" />
    
  - ex) **Leave one out** Cross Validation
+   - Each individual data point becomes a block. so it's a **`N`-fold** Cross Validation. 
  
-
+ - (+) It matters less how the data gets divided. Every data point gets to be in a test set exactly once! The **variance** of the resulting estimate is reduced as k is increased! 
+ - (-) The training has to be rerun from scratch k times, which means it takes k times as much computation to make an evaluation. 
 
 > In the context of classification, What if our data is **imbalanced**? An imbalanced dataset is one where a positive/negative signal occurs in only a small proportion of the total dataset. Often, the minority class in such a dataset will carry an extreme risk if it is not properly detected. 
  - __Metric Problem:__ Normal optimization metrics, such as `accuracy`, may not be indicative of true performance, especially when there is increased risk associated with false-negative or false-positive predictions.
