@@ -75,8 +75,10 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
 ```
 ## > Step_01 Split-II.
 ### Another problem is we should save our 'testing set' for later, so Play along with 'training set' solely, using `Cross Validation`.
-The best model-complexity would be the point where these two graphs just start to distance from each other. 
+ - The best model-complexity would be the point where these two graphs just start to distance from each other. 
 <img src="https://user-images.githubusercontent.com/31917400/39399711-b425a720-4b1a-11e8-8cdf-1736fc1631c8.jpg" />
+
+### Cross Validation allows us to `compare different ML algorithms` and get a sense of how well they will work in practice! What should I use? SVM? KNN? LogisticReg? 
 
  - ex) **K-fold** Cross Validation
    - First, dividing our data into a training set / a real-testing set
@@ -87,7 +89,7 @@ The best model-complexity would be the point where these two graphs just start t
      - 3. After finishing K-times training with K different models, Average the results(**score?? what score??**) to select the best model(parameters). 
 <img src="https://user-images.githubusercontent.com/31917400/54525092-5a7d4c00-496b-11e9-9548-53d3b7528a75.jpg" />
 
-This `kf` spits out a bunch of pairs of 'train_indices, test_indices'. 
+
 
 ### In the context of classification, What if our data is imbalanced?
 An imbalanced dataset is one where a positive/negative signal occurs in only a small proportion of the total dataset. Often, the minority class in such a dataset will carry an extreme risk if it is not properly detected. 
