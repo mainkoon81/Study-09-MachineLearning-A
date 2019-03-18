@@ -60,7 +60,7 @@ Thus, we say:
  - Step_04: **test** the best model with our `real testing set`: Fit and validate, using our **traditional validation metrics** again.
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## > Step_00 Split-I.
-### Here, problem is your `X` and `y`. Before training our model, note "how to separate our `X` and `y` into training set & testing set"!
+### "how to separate our `X` and `y` into training set & testing set"?
 ## `train_test_split(X, y, test_size, random_state)`
  - X_train: The training input
  - X_test: The testing input
@@ -74,25 +74,32 @@ from sklearn.cross_validation import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
 ```
 ## > Step_01 Split-II.
-### Another problem is we should save our 'testing set' for later, so Play along with 'training set' solely, using `Cross Validation`.
- - The best model-complexity would be the point where these two graphs just start to distance from each other. 
+ - Save our original 'testing set' for later, and now play along with 'training set' solely, using `Cross Validation`.
+ - The best **model-complexity** would be the point where these two graphs just start to distance from each other. 
 <img src="https://user-images.githubusercontent.com/31917400/39399711-b425a720-4b1a-11e8-8cdf-1736fc1631c8.jpg" />
 
-### Cross Validation allows us to `compare different ML algorithms` and get a sense of how well they will work in practice! What should I use? SVM? KNN? LogisticReg? 
-
+### Cross Validation allows us to `compare different ML algorithms` and get a sense of how well they will work in practice! What should I use? SVM? KNN? LogisticReg?
+ - Let's say we have a dataset. Then we have 2 things to do. 
+   - 1. Estimate the parameters for the ML model. This means: **`training`**
+   - 2. Evaluate how well the choosen ML model works. This means: **`testing`**
+   - So we split the dataset and train & test with each ML model candidate.    
+   <img src="https://user-images.githubusercontent.com/31917400/54567422-a7910a80-49cb-11e9-92bf-d31f92ed0a79.jpg" />
+   
+### To be more fair !!!
  - ex) **K-fold** Cross Validation
    - First, dividing our data into a training set / a real-testing set
    - Only in the training set, 
      - 1. Breaking our data into **K-buckets** (K=4)
      - 2. Training our model K-times 
        - each time using a **different bucket as our testing set** and the remaining as our **training set**. 
-     - 3. After finishing K-times training with K different models, Average the results(**score?? what score??**) to select the best model(parameters). 
-<img src="https://user-images.githubusercontent.com/31917400/54525092-5a7d4c00-496b-11e9-9548-53d3b7528a75.jpg" />
+     - 3. After finishing K-times training with K different models, Average the results(**score**) to select the best model(parameters). 
+     <img src="https://user-images.githubusercontent.com/31917400/54525092-5a7d4c00-496b-11e9-9548-53d3b7528a75.jpg" />
+   
+ - ex) **Leave one out** Cross Validation
+ 
 
 
-
-### In the context of classification, What if our data is imbalanced?
-An imbalanced dataset is one where a positive/negative signal occurs in only a small proportion of the total dataset. Often, the minority class in such a dataset will carry an extreme risk if it is not properly detected. 
+> In the context of classification, What if our data is **imbalanced**? An imbalanced dataset is one where a positive/negative signal occurs in only a small proportion of the total dataset. Often, the minority class in such a dataset will carry an extreme risk if it is not properly detected. 
  - __Metric Problem:__ Normal optimization metrics, such as `accuracy`, may not be indicative of true performance, especially when there is increased risk associated with false-negative or false-positive predictions.
  - __classification Problem:__ The classification output is biased as the classifiers are more sensitive to detecting the majority class and less sensitive to the minority class.
  
