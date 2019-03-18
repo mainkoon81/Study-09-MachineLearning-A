@@ -92,9 +92,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
    
  - ex) **Leave one out** Cross Validation
    - Each individual data point becomes a block. so it's a **`N`-fold** Cross Validation. 
- 
- - (+) It matters less how the data gets divided. Every data point gets to be in a test set exactly once! The **variance** of the resulting estimate is reduced as k is increased! 
- - (-) The training has to be rerun from scratch k times, which means it takes k times as much computation to make an evaluation. 
+ - (+) It matters less how the data gets divided. Every data point gets to be in a test set exactly once! The **variance** of the resulting estimate is reduced `as K is increased`! 
+ - (-) The training has to be rerun from scratch K times, which means it takes K times as much computation to make an evaluation. 
 
 > In the context of classification, What if our data is **imbalanced**? An imbalanced dataset is one where a positive/negative signal occurs in only a small proportion of the total dataset. Often, the minority class in such a dataset will carry an extreme risk if it is not properly detected. 
  - __Metric Problem:__ Normal optimization metrics, such as `accuracy`, may not be indicative of true performance, especially when there is increased risk associated with false-negative or false-positive predictions.
