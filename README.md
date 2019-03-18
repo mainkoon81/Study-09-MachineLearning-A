@@ -49,11 +49,11 @@ Thus, we say:
  - Step_01 Split-II: using training set, prepare **Cross-Validation** to increase **fairness**. 
    - Split the training set again(into training and testing). We don't know the best 'K' value yet.
    - Eventually, we decide the optimal size of training or testing set for better modelling. And this hints the best 'K' value. 
- - Step_02 Fitting_Optimization: **Optimize** our model before training  
+ - Step_02 Build and **Optimize** our model before training  
    - Solve the problem of `over/underfitting`, using **'LearningCurve'**. 
      - (the regularization of parameters is available of course). 
    - Solve the problem of `parameter tuning`, using **'GridSearch'**.
- - Step_03 Validation Metrics: **fit and select** the best model 
+ - Step_03 **Fit and Select** the best model/algorithm, using **Cross-Validation** results(metrics) 
    - In each fitting on 'train & test', use our **traditional validation metrics**, then **find the AVG ???**
      - (R-sqr is available of course).
  - Step_04: **test** the best model with our `real testing set`: Fit and validate, using our **traditional validation metrics** again.
@@ -109,7 +109,7 @@ One thing we can do to improve our performance is to balance the dataset. We hav
  - Repeat K times, where K is number of folds.
 
 -------------------------------------------------------------------------------------------------------------------------------------
-## > Step_02 Fitting_Optimization
+## > Step_02 Build a model (Fitting_Optimization)
 [Note] What's our model ? 
  - Classification model: it determines or returns a **state**(+/-, Y/N, Cat/Dog/Bird...where the data-pt belongs to..)
  - Regression model: it predicts or returns a **value**
