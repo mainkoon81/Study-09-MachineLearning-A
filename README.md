@@ -239,7 +239,7 @@ best_clf = grid_fit.best_estimator_
 ## > Step_03 Validation Metrics 
 
 ## Validation I. (Classifier Model)
- - with `**Confusion-Matrix**`
+ - Starting point: `**Confusion-Matrix**`
 <img src="https://user-images.githubusercontent.com/31917400/39336893-b9a1263a-49b1-11e8-88c1-d59895c7dbe4.jpg" />
 
  - __FP:__ Positive means REJECTION. It says Rejecting Null Hypothesis which is actually true. 
@@ -250,7 +250,7 @@ best_clf = grid_fit.best_estimator_
 from sklearn.metrics import accuracy_score
 accuracy_score(y_true, y_pred)
 ```
-### But..when Accuracy won't work ?
+But..when Accuracy won't work ?
 <img src="https://user-images.githubusercontent.com/31917400/39308440-594fbf20-495d-11e8-97f5-cd51d15696d7.jpg" />
 
 ### Metric_02: Precision, Recall and F_Beta Score...`f1_score(y_true, y_pred)`
@@ -263,12 +263,12 @@ Plus, between these two errors, sometimes, depending on situation, the one is mo
  - Recall (to capture **FN** and avoid): Out of all data-pt that are actually **positive**, how many did our model classify correctly ? 
 <img src="https://user-images.githubusercontent.com/31917400/39315393-7321c1a8-496e-11e8-8875-20948e25ceab.jpg" />
 
-#### a) F1-Score (Precision ~ Recall)
+a) `F1-Score` (Precision ~ Recall)
  - We can combine these two metrics into one metric, using **'Harmonic Mean'** which is called **'F1-Score'**(2xy/x+y)
  - F1-Score is closer to the **smallest** b/w Precison and Recall. If one of them is particularly low, the F1-Score kind of raises a flag ! 
 <img src="https://user-images.githubusercontent.com/31917400/39317672-15d0cf0c-4974-11e8-90e7-a950a87be5e2.jpg" />
 
-#### b) F_Beta-Score (Precision with 'FP' vs Recall with 'FN')
+b) `F_Beta-Score` (Precision with 'FP' vs Recall with 'FN')
  - When our model care a bit more about the one than the other, we want sth more skewed towards the one.
  - Select Beta !!! 
 <img src="https://user-images.githubusercontent.com/31917400/39332689-208dfa1a-49a0-11e8-9d33-d9d7f53a1626.jpg" />
