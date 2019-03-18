@@ -89,6 +89,20 @@ The best model-complexity would be the point where these two graphs just start t
 
 This `kf` spits out a bunch of pairs of 'train_indices, test_indices'. 
 
+### In the context of classification, What if our data is imbalanced?
+An imbalanced dataset is one where a positive/negative signal occurs in only a small proportion of the total dataset. Often, the minority class in such a dataset will carry an extreme risk if it is not properly detected. 
+ - __Metric Problem:__ Normal optimization metrics, such as `accuracy`, may not be indicative of true performance, especially when there is increased risk associated with false-negative or false-positive predictions.
+ - __classification Problem:__ The classification output is biased as the classifiers are more sensitive to detecting the majority class and less sensitive to the minority class.
+ 
+One thing we can do to improve our performance is to balance the dataset. We have two options to do this:
+ - **`Undersampling`** the **majority** class — Reducing the number of samples from the majority class by randomly selecting a subset of data points from that class to use for training. **But the useful data or information might be thrown away**.
+ - **`Oversampling`** the **minority** class — Increasing the number of the samples from the minority class in the training dataset. The common method is to **add copies** of data points from the minority class, which amplifies the decision region resulting in the improvement of evaluation metrics. **But it might result in overfitting**. Another method to oversample, which reduces this issue, is **SMOTE** (Synthetic Minority Oversampling Technique). **SMOTE** is an enhanced sampling method that creates synthetic samples based on the nearest neighbors of feature values in the minority class.
+ 
+> Cross-Validation on Oversampled Data (using SMOTE)
+ - In each iteration exclude some data for validation. The excluded data should not be used for feature selection, oversampling and model building.
+ - Oversample the minority class only in the training set without the data already excluded for validation.
+ - Repeat K times, where K is number of folds.
+
 -------------------------------------------------------------------------------------------------------------------------------------
 ## > Step_02 Fitting_Optimization
 [Note] What's our model ? 
