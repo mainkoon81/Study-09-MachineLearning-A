@@ -241,7 +241,9 @@ best_clf = grid_fit.best_estimator_
 ## Validation I. (Classifier Model)
  - Starting point: `**Confusion-Matrix**`
 <img src="https://user-images.githubusercontent.com/31917400/39336893-b9a1263a-49b1-11e8-88c1-d59895c7dbe4.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/54570955-8a166d80-49d8-11e9-886a-a1d74c5bba08.jpg" />
 
+ - A confusion matrix tells you What your model did right / wrong. 
  - __FP:__ Positive means REJECTION. It says Rejecting Null Hypothesis which is actually true. 
  - __FN:__ Negative means ACCEPTION. It says Accepting Null Hypothesis which is actually false.
 
