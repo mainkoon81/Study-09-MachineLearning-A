@@ -55,7 +55,8 @@ Thus, we say:
    - Solve the problem of `parameter tuning`, using **'GridSearch'**.
  - Step_03 **Fit and Select** the best model/algorithm, using **Cross-Validation** results(metrics) 
    - In each fitting on 'train & test', use our **traditional validation metrics**, then **find the AVG ???**
-     - (R-sqr is available of course).
+     - For **Classification** Model: ROC curve is available.
+     - For **Regression** Model: R-sqr is available.
  - Step_04: **test** the best model with our `real testing set`: Fit and validate, using our **traditional validation metrics** again.
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## > Step_00 Split-I.
