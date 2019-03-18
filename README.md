@@ -90,7 +90,7 @@ The best model-complexity would be the point where these two graphs just start t
 This `kf` spits out a bunch of pairs of 'train_indices, test_indices'. 
 
 -------------------------------------------------------------------------------------------------------------------------------------
-## > Step_02 Optimization
+## > Step_02 Fitting_Optimization
 [Note] What's our model ? 
  - Classification model: it determines or returns a **state**(+/-, Y/N, Cat/Dog/Bird...where the data-pt belongs to..)
  - Regression model: it predicts or returns a **value**
