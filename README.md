@@ -84,7 +84,7 @@ The best model-complexity would be the point where these two graphs just start t
      - 1. Breaking our data into **K-buckets** (K=4)
      - 2. Training our model K-times 
        - each time using a **different bucket as our testing set** and the remaining as our **training set**. 
-     - 3. After finishing K-times training with K-models, Average the results(**score?? what score??**) to select the best model(parameters). 
+     - 3. After finishing K-times training with K different models, Average the results(**score?? what score??**) to select the best model(parameters). 
 <img src="https://user-images.githubusercontent.com/31917400/54525092-5a7d4c00-496b-11e9-9548-53d3b7528a75.jpg" />
 
 This `kf` spits out a bunch of pairs of 'train_indices, test_indices'. 
