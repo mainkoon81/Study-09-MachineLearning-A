@@ -46,7 +46,7 @@ Next step would be using our model: `classifier.fit(X,y)` then `classifier.predi
 # How to build and choose our model ? 
 Thus, we say:
  - Step_00 Split-I: **split** on data - training set & `real testing set`. Set a side our `real testing set`.
- - Step_01 Split-II: prepare **Cross-Validation** - 'train-test','train-test','train-test','train-test','train-test'...AVG! 
+ - Step_01 Split-II: using training set, prepare **Cross-Validation** to increase **fairness**. 
    - Split the training set again(into training and testing). We don't know the best 'K' value yet.
    - Eventually, we decide the optimal size of training or testing set for better modelling. And this hints the best 'K' value. 
  - Step_02 Fitting_Optimization: **Optimize** our model before training  
