@@ -43,12 +43,11 @@ classifier.fit(X,y)
 Next step would be using our model: `classifier.fit(X,y)` then `classifier.predict(new_X, new_y)`
 
 ---------------------------------------------------------------------------------------------------------------------------------------
-# But how are you sure if our model is worth or not ? 
+# How to build and choose our model ? 
 Thus, we say:
  - Step_00 Split-I: **split** on data - training set & `real testing set`. Set a side our `real testing set`.
  - Step_01 Split-II: prepare **Cross-Validation** - 'train-test','train-test','train-test','train-test','train-test'...AVG! 
    - Split the training set again(into training and testing). We don't know the best 'K' value yet.
-   - Of course, when we train our model with small size of data, but testing with CrossValidation will throw large error !
    - Eventually, we decide the optimal size of training or testing set for better modelling. And this hints the best 'K' value. 
  - Step_02 Fitting_Optimization: **Optimize** our model before training  
    - Solve the problem of `over/underfitting`, using **'LearningCurve'**. 
