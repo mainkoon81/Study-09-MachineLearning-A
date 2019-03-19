@@ -267,11 +267,12 @@ f1_score(y_true, y_pred)
  - Sensitivity(TPR): `TP / (TP+FN)` Ho: No disease: What % of patients with disease were **correctly** identified? 
  - Specificity(TNR): `TN / (TN+FP)` Ho: No disease: What % of patients without disease were **correctly** identified?
  - Compare sensitivity and specificity with **emotion**. 
-   - Someone who cry for all sad movies and more, has a high **sensitivity**. If I use him as a detector, I am sure I will detect all sad movies even if risking `FP`: type-I-err...`Detect More than I need, so guaranteed` rather than FN.  
-   - Conversely, some who is difficult to be sad, has a high **specificity**, should be sad by very specific sad movie. If I use him as a detector, I am sure I will detect sad movies even if risking `FN`: type-II-err...`Detect Less than I need, but guaranteed` rather than FP.   
+   - Someone who cry for all sad movies and more, has a high **sensitivity**. If I use him as a detector, I am sure I will detect all sad movies even if risking `FP`: type-I-err...`Detect More than I need, so guaranteed`. 
+   - Conversely, some who is difficult to be sad, has a high **specificity**, should be sad by very specific sad movie. If I use him as a detector, I am sure I will detect sad movies even if risking `FN`: type-II-err...`Detect Less than I need, but guaranteed`.
    
-> Between these two errors, sometimes, depending on situation, the one is more critical over others (FP vs FN)
- - Precision or Specificity (to capture **FP** and avoid): Out of all data-pt our model diagnosed with **Positive** world, how many did our model classify correctly ? 
+> Precision and Recall(Sensitivity)
+ - Between these two errors(`FP` vs `FN`), sometimes, depending on situation, the one is more critical over others 
+ - Precision (to capture **FP** and avoid): Out of all data-pt our model diagnosed with **Positive** world, how many did our model classify correctly ? 
  - Recall or Sensitivity (to capture **FN** and avoid): Out of all data-pt that are actually **positive**, how many did our model classify correctly ? 
 <img src="https://user-images.githubusercontent.com/31917400/39315393-7321c1a8-496e-11e8-8875-20948e25ceab.jpg" />
 
