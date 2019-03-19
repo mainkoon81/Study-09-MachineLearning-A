@@ -271,8 +271,8 @@ f1_score(y_true, y_pred)
    
 > Precision and **Recall(Sensitivity)** in the perspective of `TP`(: "Reject HO")
  - Between these two errors(`FP` vs `FN`), sometimes, depending on situation, the one is more critical over others 
- - Precision (to capture **FP** and avoid): Out of all data-pt our model diagnosed with **Positive** world, how many did our model classify correctly ? 
- - Recall or Sensitivity (to capture **FN** and avoid): Out of all data-pt that are actually **positive**, how many did our model classify correctly ? 
+ - Precision (to capture **FP** and avoid): Out of all data-pt that **`our model diagnosed with **Positive**`**, how many did our model classify correctly ? 
+ - Recall or Sensitivity (to capture **FN** and avoid): Out of all data-pt that are **`actually **positive**`**, how many did our model classify correctly ? 
 <img src="https://user-images.githubusercontent.com/31917400/39315393-7321c1a8-496e-11e8-8875-20948e25ceab.jpg" />
 
 a) `F1-Score` (Precision ~ Recall)
