@@ -264,13 +264,13 @@ from sklearn.metrics import f1_score
 f1_score(y_true, y_pred)
 ```
 > Sensitivity and Specificity
- - *Sensitivity(TPR): `TP / (TP+FN)` Ho: No disease: What % of patients with disease were **correctly** identified? 
+ - **Sensitivity(TPR)**: `TP / (TP+FN)` Ho: No disease: What % of patients with disease were **correctly** identified? 
  - Specificity(TNR): `TN / (TN+FP)` Ho: No disease: What % of patients with No disease were **correctly** identified?
  - If comparing sensitivity and specificity with **emotion**. 
    - *Someone who cry for all sad movies and more, has a high **sensitivity**. If I use him as a detector, I am sure I will detect all sad movies even if risking `FP`: type-I-err...`Detect More than I need, so guaranteed`, but **avoiding `FN`: type-II-err at any expense**.  
    - Conversely, some who is difficult to be sad, has a high **specificity**, should be sad by very specific sad movie...`Detect Less than I need, so Not guaranteed`.
    
-> Precision and *Recall(Sensitivity) in the perspective of `TP`(: "Reject HO")
+> Precision and **Recall(Sensitivity)** in the perspective of `TP`(: "Reject HO")
  - Between these two errors(`FP` vs `FN`), sometimes, depending on situation, the one is more critical over others 
  - Precision (to capture **FP** and avoid): Out of all data-pt our model diagnosed with **Positive** world, how many did our model classify correctly ? 
  - Recall or Sensitivity (to capture **FN** and avoid): Out of all data-pt that are actually **positive**, how many did our model classify correctly ? 
