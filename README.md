@@ -268,7 +268,7 @@ f1_score(y_true, y_pred)
  - Specificity(TNR): `TN / (TN+FP)` Ho: No disease: What % of patients without disease were **correctly** identified?
  - Compare sensitivity and specificity with **emotion**. 
    - Someone who cry for all sad movies and more, has a high **sensitivity**. If I use him as a detector, I am sure I will detect all sad movies even if risking `FP`: type-I-err...`Detect More than I need, so guaranteed`. 
-   - Conversely, some who is difficult to be sad, has a high **specificity**, should be sad by very specific sad movie. If I use him as a detector, I am sure I will detect sad movies even if risking `FN`: type-II-err...`Detect Less than I need, but guaranteed`.
+   - Conversely, some who is difficult to be sad, has a high **specificity**, should be sad by very specific sad movie. If I use him as a detector, I am sure I will detect sad movies even if risking `FN`: type-II-err...`Detect Less than I need, so Not guaranteed`.
    
 > Precision and Recall(Sensitivity) in the perspective of `TP`(: "Reject HO")
  - Between these two errors(`FP` vs `FN`), sometimes, depending on situation, the one is more critical over others 
