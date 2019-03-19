@@ -264,8 +264,8 @@ from sklearn.metrics import f1_score
 f1_score(y_true, y_pred)
 ```
 > Sensitivity and Specificity
- - **Sensitivity(TPR)**: `TP / (TP+FN)` Ho: No disease: What % of patients with disease were **correctly** identified? 
- - Specificity(TNR): `TN / (TN+FP)` Ho: No disease: What % of patients with No disease were **correctly** identified?
+ - **Sensitivity(TPR)**: `TP / (TP+FN)` Ho: No disease: What % of **Rejecting Ho** were correctly identified? 
+ - Specificity(TNR): `TN / (TN+FP)` Ho: No disease: What % of acceptinh Ho were correctly identified?
  - If comparing sensitivity and specificity with **emotion**. 
    - *Someone who cry for all sad movies and more, has a high **sensitivity**. If I use him as a detector, I am sure I will detect all sad movies even if risking `FP`: type-I-err...`Detect More Positive than I need, so guaranteed`, but **avoiding `FN`: type-II-err at any expense**.  
    - Conversely, some who is difficult to be sad, has a high **specificity**, should be sad by very specific sad movie...`Detect Less than I need, so Not guaranteed`.
