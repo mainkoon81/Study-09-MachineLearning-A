@@ -123,11 +123,14 @@ One thing we can do to improve our performance is to balance the dataset. We hav
 
 ## > Before-validation I: `learning_curve(estimator, X, y)`
  - **Fixing under/overfitting**
- - It compares`training set_size` with `Error_size`
- - See where the errors converge to..which will tell under/over-fitting.
- - It spits out the lists of `size of the training set` and the corresponding lists of `scores` of training/testing.
- - As we increase the size of training set, in general, **'training error'** would increase (because of entropy?) while **'testing error'**(fitting on new data) would decrease because our models become better.   
-<img src="https://user-images.githubusercontent.com/31917400/39400828-b385dde8-4b2f-11e8-92a5-18574c54be5b.jpg" />
+ - Collecting additional data in real life scenario might be really time consuming and expensive and doesn't ensure improvement in your model, thus it might be useful to plot these **learning curves** to determine `whether additional data collection is required`. However, some algorithms (mostly those in deep learning) can make use of more and more data to improve their performance.
+ - So it hints us how many training sample is needed and relevant model complexity. 
+ - How it works?
+   - It compares`training set_size` with `Error_size`
+   - See where the errors converge to..which will tell under/over-fitting.
+   - It spits out the lists of `size of the training set` and the corresponding lists of `scores` of training/testing.
+   - As we increase the size of training set, in general, **'training error'** would increase (because of entropy?) while **'testing error'**(fitting on new data) would decrease because our models become better.   
+  <img src="https://user-images.githubusercontent.com/31917400/39400828-b385dde8-4b2f-11e8-92a5-18574c54be5b.jpg" />
 
 ```
 train_sizes, train_scores, test_scores = learning_curve(estimator, X, y, cv=None, n_jobs=1, train_sizes=np.linspace(0.1, 1.0, num_trainings))
