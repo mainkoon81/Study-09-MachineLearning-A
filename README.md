@@ -295,7 +295,12 @@ b) `F_Beta-Score` (Precision with 'FP' vs Recall with 'FN')
 from sklearn.metrics import roc_curve
 roc_curve(y_true, y_score)
 ```
- - In the ROC curve we look at:
+<img src="https://user-images.githubusercontent.com/31917400/39336446-7db2501a-49af-11e8-8248-87bbb0757c1d.jpg" />
+
+What happens if we use a **different threshold** for deciding if the sample is Positive / Negative ?
+ - For example, if it was super important to correctly classify every (+) sample, we could set the threshold to 0.1.   
+
+In the ROC curve we look at:
    - TPr(= Sensitivity = Recall) = # True positives / # positives  = TP / (TP+FN) :"FROM THE WORLD OF (+)"
    - FPr = # False Positives / # negatives = FP / (FP+TN) :"FROM THE WORLD OF (-)" 
  - In the chart of "TPr vs FPr", **the area** under the curve is our metric value.
