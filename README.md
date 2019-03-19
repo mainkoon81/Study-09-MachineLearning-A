@@ -259,9 +259,11 @@ But..when Accuracy won't work ?
 <img src="https://user-images.githubusercontent.com/31917400/39308440-594fbf20-495d-11e8-97f5-cd51d15696d7.jpg" />
 
 > Sensitivity and Specificity
- - Compare sensitivity and specificity with emotion. 
-   - Someone who cry for all sad movies and more, has a high sensitivity. If I use him as a detector, I am sure I will detect all sad movies even if have (some FP: type-I-err)...Detect More 
-   - Conversely, some who is difficult to scare, should be afraid by specific horror movie. If I use him as a detector, I am sure I will detect horror movies even if I don't detect all (some FN: type-II-err)...Detect Less 
+ - Sensitivity: `TP / (TP+FN)` Ho: No disease: What % of patients with disease were **correctly** identified? 
+ - Specificity: `TN / (TN+FP)` Ho: No disease: What % of patients without disease were **correctly** identified?
+ - Compare sensitivity and specificity with **emotion**. 
+   - Someone who cry for all sad movies and more, has a high **sensitivity**. If I use him as a detector, I am sure I will detect all sad movies even if having a risk of `FP`: type-I-err...`Detect More than I need, so guaranteed.` 
+   - Conversely, some who is difficult to be sad, has a high **specificity**, should be sad by very specific sad movie. If I use him as a detector, I am sure I will detect sad movies even if having a risk of `FN`: type-II-err...`Detect Less than I need, but guaranteed.`  
 
 
 
