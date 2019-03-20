@@ -300,15 +300,15 @@ roc_curve(y_true, y_score)
 **[Threshold]**
 <img src="https://user-images.githubusercontent.com/31917400/54679465-41a59f80-4aff-11e9-97c1-1fec0ac95e87.jpg" />
 
-What happens if we use a **different threshold** for deciding if the sample is Positive / Negative ?
+Let's try **different thresholds** for deciding if the sample is Positive / Negative ?
  - For example, to examining ebola infection, let's say if it was super important to correctly classify every (+) sample, we could **set the probability-threshold to 0.1**. `Lowering the threshold !!`
-   - this will increase T**P**R and F**P**R at the same time...
+   - `this will increase T**P**R and F**P**R at the same time`.
    - this will also decrease T**N**R and F**N**R at the same time... 
  - The `threshold` can be set to anything b/w 0 and 1, but how do we determine the best threshold ? 
    - For starter, we don't need to test every single option. 
    <img src="https://user-images.githubusercontent.com/31917400/54679868-4a4aa580-4b00-11e9-97e1-123c3f8fb4b1.jpg" />
    
-   - Each threshold produces a confusion matrix. We cannot test all confusion matrix. Instead, ROC curve gives a simple way to summarize all of confusion matrix information: T`P`R(Recall or Sensitivity) vs F`P`R(1-Specificity)
+   - Each threshold produces a **confusion matrix**. We cannot produce all confusion matrix as per all thresholod. Instead, ROC curve gives a simple way to summarize all of confusion matrix information: T`P`R(Recall or Sensitivity) vs F`P`R(1-Specificity)
      - **TPR: TP / (TP+FN)** Out of all real Positive, how many Positives are classified correctly? 
      - FPR: FP / (FP+TN) Out of all real Negatives, how many Negatives are classified as Positive?
      - Each `(FPR, TPR)` comes from a threshold. We start by a **`threshold from the bottom`** that classifies all samples as **Positive**. It represents a (1, 1) in the ROC curve. They are all damn Positive ! This means the model correctly classified all Positive samples but incorrectly classified all Negative samples. 
