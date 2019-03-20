@@ -328,7 +328,7 @@ In the ROC curve we look at all sort of POSITIVES - TPR, FPR:
 
 > What if the Target Class is imbalanced? 
  - With a large number of (-) samples: **Precision vs Recall(TPR)** is better rather than FPR vs TPR because **Precision is not affected by a large number of negative samples**. This often happens in the study of a rare disease where there are so many people w/o disease (negative samples). 
- - With a large number of (+) samples: *FPR vs TPR** is better because the precision and recall would reflect mostly the ability of prediction of the positive class and not the negative class which will naturally be harder to detect due to the smaller number of samples.
+ - With a large number of (+) samples: the traditional **FPR vs TPR** is better because the precision and recall would reflect mostly the ability of prediction of the positive class and not the negative class which will naturally be harder to detect due to the smaller number of samples.
  - With a balanced: **RocCurve**
  
 https://www.kdnuggets.com/2017/06/7-techniques-handle-imbalanced-data.html
