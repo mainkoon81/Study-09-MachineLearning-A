@@ -265,11 +265,13 @@ f1_score(y_true, y_pred)
 ```
 > Sensitivity and Specificity
  - **Sensitivity(TPR)**: `TP / (TP+FN)` Ho: No disease: What % of **Rejecting Ho** were correctly identified? If it had `FN`, it'd get fucked up! So type-I-err is fine while type-II-err is critical.
-   - Comapring it to **emotion**, someone who cry for all sad movies and more, has a high **sensitivity**. If I use him as a detector, I am sure I will detect all sad movies even if risking `FP`: type-I-err...`Detect More Positive than I need, so guaranteed`, but **avoiding `FN`: type-II-err at any expense**. 
+   - Comapring it to **emotion**, someone who cry for all sad movies and more, has a high **sensitivity**. If I use him as a detector, I am sure I will detect all sad movies even if risking `FP`: type-I-err...`Detect More Positive than I need`.
+   - but **avoiding `FN`: type-II-err at any expense**. 
+   
  - Specificity(TNR):TN / (TN+FP) Ho: No disease: What % of acceptinh Ho were correctly identified?
    - Conversely, some who is difficult to be sad, has a high **specificity**, should be sad by very specific sad movie...Detect Less than I need, so Not guaranteed.
    
-> Precision and **Recall(Sensitivity)** in the perspective of `TP`(: "Reject HO")
+> **Precision** and **Recall(Sensitivity)** in the perspective of `TP`(: "Reject HO")
  - Between these two errors(`FP` vs `FN`), sometimes, depending on situation, the one is more critical over others 
  - Precision (to capture **FP** and avoid): Out of all data-pt that **`our model diagnosed with **Positive**`**, how many did our model classify correctly ? 
  - Recall or Sensitivity (to capture **FN** and avoid): Out of all data-pt that are **`actually **positive**`**, how many did our model classify correctly ? 
@@ -305,12 +307,15 @@ What happens if we use a **different threshold** for deciding if the sample is P
    - For starter, we don't need to test every single option. 
    <img src="https://user-images.githubusercontent.com/31917400/54679868-4a4aa580-4b00-11e9-97e1-123c3f8fb4b1.jpg" />
    
-   - Each threshold produces a confusion matrix. We cannot test all confusion matrix. 
+   - Each threshold produces a confusion matrix. We cannot test all confusion matrix. Instead, ROC curve gives a simple way to summarize all of confusion matrix information: T`P`R(Recall or Sensitivity) vs F`P`R(1-Specificity)
+     - **TPR: TP / (TP+FN)** Out of all real Positive, how many Positives are classified correctly? 
+     - FPR: FP / (FP+TN) Out of all real Negatives, how many Negatives are classified as Positive?
+     - Each `(FPR, TPR)` comes from a threshold. We start by a threshold from the bottom that classifies all samples as Positive. It represents a (1, 1) in the ROC curve. They are all damn Positive ! This means the model correctly classified all Positive samples but incorrectly classified all Negative samples. 
+     - As this threshold increases, the point moves toward (0.2, 0.7), then (0.05, 0.6), then (0, 0). This means the model starts to give a bias to the TPR classification in exchange for detecting actual Negative samples(Negative should be Negative, not Positive..so Reduce FPR !). Of course if you can keep TPR as 1, it would be perfect(No need to add bias)!     
+   <img src="https://user-images.githubusercontent.com/31917400/54683743-5b98af80-4b0a-11e9-91c8-092dd423882a.jpg" />
 
-In the ROC curve we look at:
-   - TPr(= Sensitivity = Recall) = # True positives / # positives  = TP / (TP+FN) :"FROM THE WORLD OF (+)"
-   - FPr = # False Positives / # negatives = FP / (FP+TN) :"FROM THE WORLD OF (-)" 
- - In the chart of "TPr vs FPr", **the area** under the curve is our metric value.
+In the ROC curve we look at POSITIVES: 
+ - In the chart of "TPr vs FPr", **the area** under the curve is our metric value: **AUC**
  - FPr and TPr (ROC metrics) measure the ability to distinguish between the classes.
  - Consider the data which is now one dimensional, so all the red, blue pt lie in 1 line and we want to find the correct **split**.
 <img src="https://user-images.githubusercontent.com/31917400/39336446-7db2501a-49af-11e8-8248-87bbb0757c1d.jpg" />
