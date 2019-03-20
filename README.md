@@ -314,7 +314,7 @@ What happens if we use a **different threshold** for deciding if the sample is P
      - As this threshold increases, the point moves toward (0.2, 0.7), then (0.05, 0.6), then (0, 0). This means the model starts to give a bias to the TPR classification in exchange for detecting actual Negative samples(Negative should be Negative, not Positive..so Reduce FPR !). Of course if you can keep TPR as 1, it would be perfect(No need to add bias)!     
    <img src="https://user-images.githubusercontent.com/31917400/54683743-5b98af80-4b0a-11e9-91c8-092dd423882a.jpg" />
 
-In the ROC curve we look at POSITIVES: 
+In the ROC curve we look at all sort of POSITIVES - TPR, FPR: 
  - In the chart of "TPr vs FPr", **the area** under the curve is our metric value: **AUC**
  - FPr and TPr (ROC metrics) measure the ability to distinguish between the classes.
  - Consider the data which is now one dimensional, so all the red, blue pt lie in 1 line and we want to find the correct **split**.
