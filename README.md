@@ -311,7 +311,7 @@ What happens if we use a **different threshold** for deciding if the sample is P
    - Each threshold produces a confusion matrix. We cannot test all confusion matrix. Instead, ROC curve gives a simple way to summarize all of confusion matrix information: T`P`R(Recall or Sensitivity) vs F`P`R(1-Specificity)
      - **TPR: TP / (TP+FN)** Out of all real Positive, how many Positives are classified correctly? 
      - FPR: FP / (FP+TN) Out of all real Negatives, how many Negatives are classified as Positive?
-     - Each `(FPR, TPR)` comes from a threshold. We start by a threshold from the bottom that classifies all samples as Positive. It represents a (1, 1) in the ROC curve. They are all damn Positive ! This means the model correctly classified all Positive samples but incorrectly classified all Negative samples. 
+     - Each `(FPR, TPR)` comes from a threshold. We start by a **`threshold from the bottom`** that classifies all samples as **Positive**. It represents a (1, 1) in the ROC curve. They are all damn Positive ! This means the model correctly classified all Positive samples but incorrectly classified all Negative samples. 
      - As this threshold increases, the point moves toward (0.2, 0.7), then (0.05, 0.6), then (0, 0). This means the model starts to give a bias to the TPR classification in exchange for detecting actual Negative samples(Negative should be Negative, not Positive..so Reduce FPR !). Of course if you can keep TPR as 1, it would be perfect(No need to add bias)!     
    <img src="https://user-images.githubusercontent.com/31917400/54683743-5b98af80-4b0a-11e9-91c8-092dd423882a.jpg" />
 
