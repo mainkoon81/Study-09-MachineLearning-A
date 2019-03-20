@@ -297,6 +297,7 @@ b) `F_Beta-Score` (Precision with 'FP' vs Recall with 'FN')
 from sklearn.metrics import roc_curve
 roc_curve(y_true, y_score)
 ```
+**[Threshold]**
 <img src="https://user-images.githubusercontent.com/31917400/54679465-41a59f80-4aff-11e9-97c1-1fec0ac95e87.jpg" />
 
 What happens if we use a **different threshold** for deciding if the sample is Positive / Negative ?
