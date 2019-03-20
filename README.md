@@ -324,6 +324,8 @@ In the ROC curve we look at all sort of POSITIVES - TPR, FPR:
  - How to construct those values? Examine every inch of the model based on "TPr&FPr"...For example, 
 <img src="https://user-images.githubusercontent.com/31917400/39336710-ec5aa66a-49b0-11e8-97c3-8a86ec1b1800.jpg" />
 
+<img src="https://user-images.githubusercontent.com/31917400/54684722-fc886a00-4b0c-11e9-8cbe-e3f93b67fc07.jpg" />
+
 > What if the Target Class is imbalanced? 
  - With a large number of (-) samples: **Precision or Recall** is better because it is not affected by a large number of negative samples. 
  - With a large number of (+) samples: **RocCurve** is better because the precision and recall would reflect mostly the ability of prediction of the positive class and not the negative class which will naturally be harder to detect due to the smaller number of samples.
