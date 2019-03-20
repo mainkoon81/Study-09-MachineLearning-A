@@ -295,11 +295,17 @@ b) `F_Beta-Score` (Precision with 'FP' vs Recall with 'FN')
 from sklearn.metrics import roc_curve
 roc_curve(y_true, y_score)
 ```
-<img src="https://user-images.githubusercontent.com/31917400/39336446-7db2501a-49af-11e8-8248-87bbb0757c1d.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/54679465-41a59f80-4aff-11e9-97c1-1fec0ac95e87.jpg" />
 
 What happens if we use a **different threshold** for deciding if the sample is Positive / Negative ?
- - For example, if it was super important to correctly classify every (+) sample, we could **set the threshold to 0.1**.
- - 
+ - For example, to examining ebola infection, let's say if it was super important to correctly classify every (+) sample, we could **set the probability-threshold to 0.1**. `Lowering the threshold !!`
+   - this will increase T**P**R and F**P**R at the same time...
+   - this will also decrease T**N**R and F**N**R at the same time... 
+ - The `threshold` can be set to anything b/w 0 and 1, but how do we determine the best threshold ? 
+   - For starter, we don't need to test every single option. 
+   <img src="https://user-images.githubusercontent.com/31917400/54679868-4a4aa580-4b00-11e9-97e1-123c3f8fb4b1.jpg" />
+   
+   - Each threshold produces a confusion matrix. We cannot test all confusion matrix. 
 
 In the ROC curve we look at:
    - TPr(= Sensitivity = Recall) = # True positives / # positives  = TP / (TP+FN) :"FROM THE WORLD OF (+)"
