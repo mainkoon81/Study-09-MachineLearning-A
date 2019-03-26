@@ -74,10 +74,10 @@ from sklearn.cross_validation import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
 ```
 ## > Step_01 Split-II.
-### Save our original 'testing set' for later, and now focus on 'training set' solely, to use `Cross Validation`. We use this on the training set to simulate the validation set. At the end, `Cross Validation` allows us to `compare different ML algorithms`. What should I use? SVM? KNN? LogisticReg?
+### Save our original 'testing set' for later, but now focus on 'training set' solely. We use `Cross Validation` on the training set to simulate the validation set(test + train). In the end, `Cross Validation` allows us to `compare different ML algorithms`. What should I use? SVM? KNN? LogisticReg?
  - Let's say we have a dataset. Then we have 2 things to do. 
    - 1. Estimate **parameters** for the ML model. This means: **`training`**
-   - 2. Evaluate **performance** for the ML model. How well the choosen ML model works. This means: **`testing`**
+   - 2. Evaluate **performance** for the ML model. How well the choosen ML model works. This means: **`testing`**: then this testing gives us the **MSE**, or accuracy called `cross_val_score(model, X_train, Y_train, cv=kfold)`.  
    - So we split the dataset and train & test with each ML model candidate.    
    <img src="https://user-images.githubusercontent.com/31917400/54567422-a7910a80-49cb-11e9-92bf-d31f92ed0a79.jpg" />
    
