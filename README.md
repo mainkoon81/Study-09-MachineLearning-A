@@ -240,8 +240,8 @@ best_clf = grid_fit.best_estimator_
 # NEXT...
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## > Step_03 Validation Metrics 
-
-## Validation I. (Classifier Model)
+# `For Classifier`
+## Validation I. 
  - Starting point: `**Confusion-Matrix**`
 <img src="https://user-images.githubusercontent.com/31917400/39336893-b9a1263a-49b1-11e8-88c1-d59895c7dbe4.jpg" />
 <img src="https://user-images.githubusercontent.com/31917400/54570955-8a166d80-49d8-11e9-886a-a1d74c5bba08.jpg" />
@@ -335,7 +335,8 @@ https://www.kdnuggets.com/2017/06/7-techniques-handle-imbalanced-data.html
 
 https://towardsdatascience.com/what-metrics-should-we-use-on-imbalanced-data-set-precision-recall-roc-e2e79252aeba 
 
-## Validation II. (Regression Model) 
+# `For Regressor`
+## Validation II.  
  - with `**R-Squared**`
 
 ### Metric_01: MSE & R-Squared
