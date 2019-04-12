@@ -123,6 +123,7 @@ One thing we can do to improve our performance is to balance the dataset. We hav
 <img src="https://user-images.githubusercontent.com/31917400/39722493-d97eebd6-523a-11e8-96a5-5ff3e226e06b.jpg" />
 
 ## > Before-validation I: `learning_curve(estimator, X, y)`
+Learning curve says how better does the model get at predicting the target as you the increase number of instances used to train it. Learning curve conventionally depicts improvement in performance on the vertical axis when there are changes in another parameter (on the horizontal axis), such as training set size (in machine learning) or iteration/time (in both machine and biological learning). 
  - **Fixing under/overfitting**
  - Collecting additional data in real life scenario might be really time consuming and expensive and doesn't ensure improvement in your model, thus it might be useful to plot these **learning curves** to determine `whether additional data collection is required`. However, some algorithms (mostly those in deep learning) can make use of more and more data to improve their performance.
  - So it hints us the necessary training `sample_size` and necessary `model_complexity`. 
