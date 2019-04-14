@@ -155,6 +155,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.svm import SVC
 from sklearn.model_selection import learning_curve
+from keras.wrappers.scikit_learn import KerasRegressor
 
 model = LogisticRegression(penalty=’l2’, solver='lbfgs', multi_class='multinomial', n_jobs=-1).fit(X_train, y_train, blah...) 
 model = GradientBoostingClassifier(blah..).fit(X_train, y_train, blah...)
