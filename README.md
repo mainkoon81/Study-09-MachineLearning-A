@@ -156,9 +156,10 @@ from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.svm import SVC
 from sklearn.model_selection import learning_curve
 
-estimator = LogisticRegression()
-estimator = GradientBoostingClassifier()
-estimator = SVC(kernel='rbf', gamma=1000)
+model = LogisticRegression(penalty=’l2’, solver='lbfgs', multi_class='multinomial', n_jobs=-1).fit(X_train, y_train, blah...) 
+model = GradientBoostingClassifier(blah..).fit(X_train, y_train, blah...)
+model = SVC(kernel='rbf', gamma=1000, blah..).fit(X_train, y_train, blah...)
+model = blah..blah...
 ```
 
 It is good to randomize the data before drawing Learning Curves
@@ -193,6 +194,14 @@ def draw_learning_curves(X, y, estimator, num_trainings):
 
     plt.show()
 ```
+Finally,
+```
+model = KerasRegressor(build_fn=base_model_5, verbose=0)
+X_LC, Y_LC = randomize(X_train, Y_train) 
+
+draw_learning_curves(X_LC, Y_LC, estimator=model, num_trainings=500)
+```
+
 ## > Before-validation II: `GridSearchCV(clf, parameters, scoring)`
  - **optimizing parameters**
 > Basically, these are what constitute our models, and we would pick the model producing the highest F1-Score.  
