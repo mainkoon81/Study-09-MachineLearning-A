@@ -270,6 +270,7 @@ But..when Accuracy won't work ?
 <img src="https://user-images.githubusercontent.com/31917400/39308440-594fbf20-495d-11e8-97f5-cd51d15696d7.jpg" />
 
 ### Metric_02: Precision, Recall and F_Beta Score...`f1_score(y_true, y_pred)`
+Precision means `TP out of all Positive classification` while Recall means `TP out of real Positives`. 
 ```
 from sklearn.metrics import f1_score
 f1_score(y_true, y_pred)
