@@ -4,6 +4,16 @@
  - Cross means AVG.
  - Repeat CV procedure for each ML-modelling method(SVM,DTree,etc)during training, then select the model with minimum CV error. 
 
+## split?
+ - Training set: to construct classifier 
+   - NB Count frequencies
+   - DT: pick attributes to split on
+ - Validation set: to pick algorithm and adjustment settings
+   - Pick best-performing algorithm (NB vs DT vs …)
+   - Fine tune the adjustments (tree depth, k in kNN, c in SVM (tbd)) 
+ - Testing set: to estimate future error rate
+   - Never report best of any runs 
+   - Run only once, or report results of every run
 ----------------------------------------------------------------------------------------------------------------------------------------
 ## Training our model
 If our **df** has columns(x1, x2, y), we need to split the input and output into Numpy Arrays, in order to apply the classifiers in **scikit learn**...saying that..we convert a **Series** into a **NumpyArray**.
