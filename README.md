@@ -290,7 +290,7 @@ f1_score(y_true, y_pred)
    - Comapring it to **emotion**, someone who cry for all sad movies and more, has a high **sensitivity**. If I use him as a detector, I am sure I will detect all sad movies even if risking `FP`: type-I-err...`Detect More Positive than I need`.
    - but **avoiding `FN`: type-II-err at any expense**. 
    
- - Specificity(TNR):TN / (TN+FP) Ho: No disease: What % of acceptinh Ho were correctly identified?
+ - Specificity(TNR):TN / (TN+FP) Ho: No disease: What % of **Accepting Ho** were correctly identified?
    - Conversely, some who is difficult to be sad, has a high **specificity**, should be sad by very specific sad movie...Detect Less than I need, so Not guaranteed.
    
 > **Precision** and **Recall(Sensitivity)** in the perspective of `TP`(: "Reject HO")
